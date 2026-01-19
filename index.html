@@ -1,21 +1,86 @@
-<!DOCTYPE html><link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio - Aurélien Hébert</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Aurélien Hébert</title>
+
+  <!-- Polices premium (titre + texte) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header qui va "monter" et se transformer en barre -->
+  <header class="topHeader" id="topHeader">
+    <div class="topHeader__inner">
+      <div class="brand">
+        <span class="brand__name">Aurélien Hébert</span>
+        <span class="brand__role">Consultant freelance</span>
+      </div>
 
-    <header class="hero">
-        <h1 class="anim anim-title">Bienvenue sur mon portfolio</h1>
+      <nav class="nav">
+        <a href="#projets">Projets</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <p class="anim anim-text">
-            Je m’appelle <strong>Aurélien Hébert</strong>. J’accompagne les entreprises en
-            <strong>gestion</strong>, <strong>support</strong> et <strong>téléprospection</strong>,
-            avec une approche simple, efficace et orientée résultats.
-        </p>
-    </header>
+  <!-- Intro / Hero (arrive au centre, puis remonte et se "loge en haut") -->
+  <main class="stage" id="stage">
+    <section class="hero" aria-label="Introduction">
+      <h1 class="hero__title">
+        <span class="reveal reveal--1">Bienvenue sur mon portfolio</span>
+      </h1>
 
+      <p class="hero__text">
+        <span class="reveal reveal--2">
+          Je m’appelle <strong>Aurélien Hébert</strong>. J’accompagne les entreprises en
+          <strong>gestion</strong>, <strong>support</strong> et <strong>téléprospection</strong>,
+          avec une approche simple, efficace et orientée résultats.
+        </span>
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn" href="#projets">Voir mes projets</a>
+        <a class="btn btn--ghost" href="#contact">Me contacter</a>
+      </div>
+    </section>
+
+    <!-- Contenu (caché au début, apparaît après l’animation) -->
+    <section class="content" id="content">
+      <section class="block" id="projets">
+        <h2>Projets</h2>
+        <p>Ajoute ici tes projets (cartes, liens, captures…).</p>
+      </section>
+
+      <section class="block" id="services">
+        <h2>Services</h2>
+        <p>Gestion, support, téléprospection — explique en 3 points ce que tu apportes.</p>
+      </section>
+
+      <section class="block" id="contact">
+        <h2>Contact</h2>
+        <p>Email / LinkedIn / formulaire…</p>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    // Après l’intro : on "loge" le header en haut + on révèle le contenu
+    window.addEventListener("load", () => {
+      const stage = document.getElementById("stage");
+      stage.classList.add("is-playing");
+
+      // Timing simple : laisse le temps aux 2 reveals + un petit délai
+      setTimeout(() => {
+        stage.classList.add("is-docked");
+        document.body.classList.add("is-scroll");
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
