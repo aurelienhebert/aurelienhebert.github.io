@@ -93,6 +93,20 @@ body.is-scroll .topHeader{ transform: translateY(0); }
     );
 }
 
+.hero-banner::before{
+  content:"";
+  position:absolute;
+  inset:-20px;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.06) 0,
+      rgba(255,255,255,0.06) 40px,
+      rgba(255,255,255,0.00) 40px,
+      rgba(255,255,255,0.00) 80px
+    );
+  opacity:.35;
+}
 
 /* image centrale */
 .hero-banner__portrait{
