@@ -191,3 +191,6 @@ body.is-playing .reveal--2{
 .hero{
   margin-top: 140px;
 }
+
+
+.art-banner { background: blue !important; height: 300px !important; }
