@@ -1,246 +1,125 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Aurélien HEBERT — Consultant freelance (data, reporting automatisé, emails HTML B2B & téléprospection)." />
-  <title>Aurélien HEBERT</title>
+  <title>Freelance</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Background -->
   <div class="bg" aria-hidden="true">
-    <div class="blob blob--a"></div>
-    <div class="blob blob--b"></div>
+    <div class="bg__grain"></div>
+    <div class="bg__blob bg__blob--a"></div>
+    <div class="bg__blob bg__blob--b"></div>
   </div>
 
   <!-- Top bar -->
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="Retour en haut">
+      <a class="brand" href="#" aria-label="Home">
         <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__text">Aurélien HEBERT</span>
+        <span class="brand__txt">AZ</span>
       </a>
 
-      <button class="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
-        <span class="menuBtn__txt">Menu</span>
+      <button class="menuBtn" type="button" aria-label="Open menu">
+        <span class="menuBtn__txt">MENU</span>
         <span class="menuBtn__ic" aria-hidden="true"></span>
       </button>
     </div>
   </header>
 
-  <!-- Menu overlay -->
-  <aside id="menu" class="menu" aria-hidden="true">
-    <div class="menu__panel">
-      <div class="menu__head">
-        <div class="menu__brand">
-          <span class="menu__dot" aria-hidden="true"></span>
-          <span class="menu__name">Aurélien HEBERT</span>
-        </div>
-        <button class="menu__close" type="button" aria-label="Fermer">✕</button>
-      </div>
-
-      <nav class="menu__nav" aria-label="Navigation">
-        <a class="menu__link" href="#top"><span class="menu__n">01/</span> Home</a>
-        <a class="menu__link" href="#about"><span class="menu__n">02/</span> About</a>
-        <a class="menu__link" href="#process"><span class="menu__n">03/</span> Process</a>
-        <a class="menu__link" href="#projects"><span class="menu__n">04/</span> Recent projects</a>
-      </nav>
-
-      <div class="menu__foot">
-        <p class="menu__label">Contact</p>
-        <a class="menu__meta" href="mailto:m.hebert.aurelien.pro@gmail.com">m.hebert.aurelien.pro@gmail.com</a>
-        <a class="menu__meta" href="tel:+33659923323">06 59 92 33 23</a>
-        <p class="menu__small">Rouen, France</p>
-      </div>
-    </div>
-
-    <div class="menu__backdrop" data-close="1" aria-hidden="true"></div>
-  </aside>
-
-  <main id="top">
-    <!-- HERO -->
+  <!-- Hero -->
+  <main>
     <section class="hero">
       <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="hero__kicker reveal">
-            I am a consultant in <span class="grad">data & performance</span>
+        <!-- Left -->
+        <div class="hero__left">
+          <p class="kicker a a-1">
+            Je suis freelancer
           </p>
 
-          <h1 class="hero__title reveal" style="transition-delay: .05s;">
-            Aurélien<br />
-            <span class="hero__titleAccent">HEBERT</span>
+          <h1 class="title" aria-label="ALINA BULUT">
+            <span class="title__line">
+              <span class="title__word">Aurélien</span>
+            </span>
+            <span class="title__line">
+              <span class="title__word title__word--accent">HEBERT</span>
+            </span>
           </h1>
 
-          <p class="hero__sub reveal" style="transition-delay: .10s;">
-            Je conçois des <strong>reportings automatisés</strong>, des <strong>dashboards KPI</strong> et des
-            <strong>emails HTML B2B</strong>. J’interviens aussi en <strong>téléprospection</strong> pour générer
-            des opportunités.
+          <div class="divider a a-2" aria-hidden="true"></div>
+
+          <p class="lead a a-3">
+            I design warm, minimal spaces and thoughtful interiors with a strong focus on
+            functionality, materials, and natural light.
           </p>
 
-          <div class="hero__actions reveal" style="transition-delay: .14s;">
-            <a class="btn btn--primary" href="#about">Explore</a>
-            <a class="btn btn--ghost" href="#projects">Recent projects</a>
+          <div class="actions a a-4">
+            <a class="btn btn--primary" href="#">EXPLORE</a>
+            <a class="btn btn--ghost" href="#">RECENT PROJECTS</a>
           </div>
 
-          <div class="hero__mini reveal" style="transition-delay: .18s;">
-            <div class="mini">
-              <span class="mini__k">Based in</span>
-              <span class="mini__v">Rouen</span>
+          <div class="facts a a-5">
+            <div class="fact">
+              <span class="fact__k">BASED IN</span>
+              <span class="fact__v">ISTANBUL</span>
             </div>
-            <div class="mini">
-              <span class="mini__k">Focus</span>
-              <span class="mini__v">KPI • Reporting • Automation</span>
+            <div class="fact">
+              <span class="fact__k">FOCUS</span>
+              <span class="fact__v">INTERIORS • ARCHITECTURE</span>
             </div>
           </div>
         </div>
 
-        <div class="hero__media reveal" style="transition-delay: .08s;">
-          <figure class="media">
-            <!-- PLACEHOLDER -->
-            <img src="assets/hero.jpg" alt="Portrait (à remplacer)" loading="lazy" />
-            <figcaption class="media__cap">
+        <!-- Right -->
+        <div class="hero__right">
+          <div class="media a a-3">
+            <!-- placeholder image -->
+            <img src="assets/hero.jpg" alt="Hero image (placeholder)" loading="lazy" />
+            <div class="media__cap">
               <span class="media__dot" aria-hidden="true"></span>
-              Reporting & performance — orienté résultats
-            </figcaption>
-          </figure>
-
-          <div class="cardLite cardLite--float">
-            <p class="cardLite__t">I get inspired by</p>
-            <p class="cardLite__p">des process simples, des dashboards lisibles, et des automatisations utiles.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="container about__grid">
-        <div class="about__media reveal">
-          <!-- PLACEHOLDER -->
-          <img src="assets/about.jpg" alt="Image à remplacer" loading="lazy" />
-        </div>
-
-        <div class="about__copy">
-          <p class="eyebrow reveal">About</p>
-          <h2 class="h2 reveal" style="transition-delay:.05s;">
-            Des tableaux de bord <span class="grad">clairs</span>, des KPI utiles, et des automatisations fiables.
-          </h2>
-          <p class="p reveal" style="transition-delay:.10s;">
-            Mon objectif : te donner une vision simple et actionnable de l’activité, avec des reportings robustes
-            et des contenus (emails) propres et performants.
-          </p>
-
-          <div class="stats reveal" style="transition-delay:.14s;">
-            <div class="stat">
-              <span class="stat__k">+8 ans</span>
-              <span class="stat__v">expérience</span>
-            </div>
-            <div class="stat">
-              <span class="stat__k">Depuis 2021</span>
-              <span class="stat__v">emails B2B</span>
-            </div>
-            <div class="stat">
-              <span class="stat__k">KPI</span>
-              <span class="stat__v">pilotage</span>
+              Award winning studio — concept & interiors
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- PROCESS -->
-    <section id="process" class="process">
-      <div class="container">
-        <div class="headRow">
-          <div>
-            <p class="eyebrow reveal">This is my process</p>
-            <h2 class="h2 reveal" style="transition-delay:.05s;">Clair, rapide, orienté impact.</h2>
+          <!-- Floating shapes (like the template vibe) -->
+          <div class="shape shape--ring" aria-hidden="true"></div>
+          <div class="shape shape--dots" aria-hidden="true"></div>
+          <div class="shape shape--line" aria-hidden="true"></div>
+
+          <!-- STOP POINT: "I get inspired by" card -->
+          <div class="inspired a a-6">
+            <p class="inspired__k">I get inspired by</p>
+            <p class="inspired__v">
+              raw textures, honest materials, and the rhythm of the city.
+            </p>
           </div>
         </div>
-
-        <div class="steps">
-          <article class="step reveal">
-            <div class="step__n">01</div>
-            <h3 class="step__t">Diagnostiquer</h3>
-            <p class="step__p">Comprendre l’activité, définir les KPI, clarifier les besoins.</p>
-          </article>
-
-          <article class="step reveal" style="transition-delay:.05s;">
-            <div class="step__n">02</div>
-            <h3 class="step__t">Structurer & automatiser</h3>
-            <p class="step__p">Mettre en place le reporting, automatiser, sécuriser la qualité.</p>
-          </article>
-
-          <article class="step reveal" style="transition-delay:.10s;">
-            <div class="step__n">03</div>
-            <h3 class="step__t">Piloter & optimiser</h3>
-            <p class="step__p">Faire vivre les dashboards, suivre la perf, itérer en continu.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RECENT PROJECTS (bouton / ancre demandée) -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <div class="headRow headRow--space">
-          <div>
-            <p class="eyebrow reveal">Recent projects</p>
-            <h2 class="h2 reveal" style="transition-delay:.05s;">Sélection de réalisations</h2>
-          </div>
-          <a class="btn btn--primary reveal" style="transition-delay:.08s;" href="#projects">
-            Recent projects
-          </a>
-        </div>
-
-        <!-- STOP ICI (comme tu demandes) -->
       </div>
     </section>
   </main>
 
   <script>
-    // Menu
-    const menu = document.getElementById('menu');
-    const openBtn = document.querySelector('.menuBtn');
-    const closeBtn = document.querySelector('.menu__close');
-    const backdrop = document.querySelector('.menu__backdrop');
-    const links = document.querySelectorAll('.menu__link');
+    // intro animations (load)
+    window.addEventListener("load", () => {
+      document.body.classList.add("is-ready");
+    });
 
-    function openMenu(){
-      menu.classList.add('is-open');
-      menu.setAttribute('aria-hidden','false');
-      openBtn.setAttribute('aria-expanded','true');
-      document.documentElement.classList.add('no-scroll');
-    }
-    function closeMenu(){
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden','true');
-      openBtn.setAttribute('aria-expanded','false');
-      document.documentElement.classList.remove('no-scroll');
-    }
-    openBtn.addEventListener('click', () => menu.classList.contains('is-open') ? closeMenu() : openMenu());
-    closeBtn.addEventListener('click', closeMenu);
-    backdrop.addEventListener('click', closeMenu);
-    links.forEach(a => a.addEventListener('click', closeMenu));
-    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
-
-    // Reveal on scroll (effet Webflow-like)
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(ent => {
-        if(ent.isIntersecting){
-          ent.target.classList.add('in');
-          io.unobserve(ent.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
+    // tiny parallax on mouse for shapes (optional but feels "Webflow-like")
+    const root = document.documentElement;
+    window.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth) - 0.5;
+      const y = (e.clientY / window.innerHeight) - 0.5;
+      root.style.setProperty("--mx", x.toFixed(3));
+      root.style.setProperty("--my", y.toFixed(3));
+    });
   </script>
 </body>
 </html>
