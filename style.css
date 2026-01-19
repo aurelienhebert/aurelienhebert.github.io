@@ -8,17 +8,18 @@
 *{ box-sizing:border-box; }
 html, body{ height:100%; }
 
+/* Base */
 body{
   margin:0;
   background:#fff;
   color:var(--black);
   font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  overflow:hidden;
+  overflow:hidden; /* bloqué pendant l'intro */
 }
 
 body.is-scroll{ overflow:auto; }
 
-/* Header */
+/* ===== Header ===== */
 .topHeader{
   position:fixed;
   top:0; left:0;
@@ -30,6 +31,7 @@ body.is-scroll{ overflow:auto; }
   border-bottom: 1px solid var(--line);
   transition: transform .9s cubic-bezier(.2,.8,.2,1);
 }
+
 body.is-scroll .topHeader{ transform: translateY(0); }
 
 .topHeader__inner{
@@ -53,20 +55,36 @@ body.is-scroll .topHeader{ transform: translateY(0); }
 }
 .nav a:hover{ opacity:1; }
 
-/* Stage */
+/* ===== Stage ===== */
 .stage{
   min-height:100vh;
   padding: 0 var(--pad);
+  padding-top: 90px; /* laisse la place au header quand il apparaîtra */
 }
 
-/* Hero */
+/* ===== Bandeau image ===== */
+.banner{
+  margin-top: 10px;
+}
+
+/* L'image prend toute la largeur dispo, sans exploser en hauteur */
+.banner__img{
+  width: 100%;
+  max-width: 1100px;      /* évite l'effet “trop grand” sur très grands écrans */
+  height: auto;
+  display: block;
+  margin: 0 auto;         /* centre l'image */
+  border-radius: 12px;    /* optionnel : donne un rendu premium */
+}
+
+/* ===== Hero ===== */
 .hero{
-  min-height:100vh;
+  min-height: calc(100vh - 260px);
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:22px;
-  padding-top:60px;
+  padding-top: 30px;
   transition: all .9s cubic-bezier(.2,.8,.2,1);
 }
 
@@ -75,18 +93,22 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   font-family:"Playfair Display", serif;
   font-weight:700;
   letter-spacing:-0.02em;
-  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
   line-height:1.05;
 }
 
 .hero__text{
   margin:0;
-  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.45rem);
   line-height:1.6;
-  max-width:980px;
+  max-width: 980px;
 }
 
-.hero__cta{ display:flex; gap:14px; margin-top:10px; }
+.hero__cta{
+  display:flex;
+  gap:14px;
+  margin-top:10px;
+}
 
 .btn{
   display:inline-flex;
@@ -109,18 +131,20 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   color:var(--black);
 }
 
-/* Reveal (anti page blanche sans JS) */
+/* ===== Reveal (sécurisé) ===== */
 .reveal{
   display:inline-block;
   opacity:1;
   transform: translateY(0);
   filter: blur(0);
 }
+
 .js .reveal{
   opacity:0;
   transform: translateY(28px);
   filter: blur(2px);
 }
+
 body.is-playing .reveal--1{
   animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
 }
@@ -128,91 +152,47 @@ body.is-playing .reveal--2{
   animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
   animation-delay:.35s;
 }
+
 @keyframes revealUp{
   to{ opacity:1; transform: translateY(0); filter: blur(0); }
 }
 
-/* Dock */
+/* ===== Dock (contenu) ===== */
 .content{
   opacity:0;
   transform: translateY(18px);
   transition: all .9s cubic-bezier(.2,.8,.2,1);
-  padding-bot
-
-
-
-/* ===== BANDEAU TURQUOISE FIN & CENTRÉ ===== */
-
-.art-banner{
-  position: relative;
-  height: 140px; /* beaucoup plus bas */
-  background: linear-gradient(
-    135deg,
-    #0d6f7a 0%,
-    #0fa3a9 45%,
-    #17c0c8 100%
-  );
-  overflow: visible;
+  padding-bottom: 80px;
 }
 
-/* Effet graphique très discret */
-.art-overlay{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      600px 160px at 30% 40%,
-      rgba(255,255,255,0.22),
-      transparent 60%
-    ),
-    radial-gradient(
-      500px 140px at 70% 30%,
-      rgba(255,255,255,0.15),
-      transparent 60%
-    );
-  opacity: 0.6;
+body.is-docked .content{
+  opacity:1;
+  transform: translateY(0);
 }
 
-/* Cercle blanc — PROPORTION & CENTRAGE */
-.photo-circle{
-  position: absolute;
-  left: 50%;
-  bottom: -42px;                 /* dépassement maîtrisé */
-  transform: translateX(-50%);
-  width: 110px;                  /* PLUS PETIT */
-  height: 110px;
-  background: #fff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.25);
-  border: 4px solid rgba(255,255,255,0.95);
+.block{
+  padding:70px 0;
+  border-top:1px solid var(--line);
 }
 
-/* Photo bien contenue (pas gros plan) */
-.photo-circle img{
-  width: 85%;
-  height: 85%;
-  object-fit: contain;
-  display: block;
+.block h2{
+  margin:0 0 10px 0;
+  font-size:1.6rem;
+  letter-spacing:-0.02em;
 }
 
-/* Ajustement du contenu suivant */
-.hero{
-  margin-top: 70px;
+.block p{
+  margin:0;
+  max-width:900px;
+  line-height:1.7;
+  color:var(--gray);
 }
 
-/* Mobile */
-@media (max-width: 768px){
-  .art-banner{ height: 120px; }
-
-  .photo-circle{
-    width: 96px;
-    height: 96px;
-    bottom: -36px;
-  }
-
-  .hero{ margin-top: 60px; }
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  :root{ --pad: 22px; }
+  .nav{ display:none; }
+  .hero__cta{ flex-direction:column; align-items:flex-start; }
+  .btn{ width:100%; }
+  .banner__img{ border-radius: 10px; }
 }
