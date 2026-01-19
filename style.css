@@ -1,51 +1,156 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Aurélien Hébert</title>
+:root{
+  --black:#0b0b0b;
+  --gray:#2a2a2a;
+  --line: rgba(0,0,0,.10);
+  --pad: 80px;
+}
 
-  <!-- Polices premium (titre + texte) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  background:#fff;
+  color:var(--black);
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  overflow:hidden; /* on bloque le scroll pendant l'intro */
+}
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Header qui va "monter" et se transformer en barre -->
-  <header class="topHeader" id="topHeader">
-    <div class="topHeader__inner">
-      <div class="brand">
-        <span class="brand__name">Aurélien Hébert</span>
-        <span class="brand__role">Consultant freelance</span>
-      </div>
+body.is-scroll{
+  overflow:auto; /* on remet le scroll après l'intro */
+}
 
-      <nav class="nav">
-        <a href="#projets">Projets</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+/* ===== Header (barre du haut) ===== */
+.topHeader{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:10;
+  transform: translateY(-110%); /* caché au début */
+  background:rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: transform .9s cubic-bezier(.2,.8,.2,1);
+}
 
-  <!-- Intro / Hero (arrive au centre, puis remonte et se "loge en haut") -->
-  <main class="stage" id="stage">
-    <section class="hero" aria-label="Introduction">
-      <h1 class="hero__title">
-        <span class="reveal reveal--1">Bienvenue sur mon portfolio</span>
-      </h1>
+.topHeader__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 18px var(--pad);
+  gap: 24px;
+}
 
-      <p class="hero__text">
-        <span class="reveal reveal--2">
-          Je m’appelle <strong>Aurélien Hébert</strong>. J’accompagne les entreprises en
-          <strong>gestion</strong>, <strong>support</strong> et <strong>téléprospection</strong>,
-          avec une approche simple, efficace et orientée résultats.
-        </span>
-      </p>
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+.brand__name{
+  font-weight:600;
+  letter-spacing:-0.02em;
+}
+.brand__role{
+  font-size:.9rem;
+  color: var(--gray);
+  margin-top:4px;
+}
 
-      <div class="hero__cta">
-        <a class="btn" href="#projets">Voir mes projets</a>
-        <a class="btn btn--ghost" href="#contact">Me contacter</a>
-      </div>
-    </s
+.nav{
+  display:flex;
+  gap: 18px;
+}
+.nav a{
+  text-decoration:none;
+  color: var(--black);
+  font-weight:500;
+  opacity:.85;
+  transition: opacity .2s ease;
+}
+.nav a:hover{ opacity:1; }
+
+/* ===== Stage (zone intro + contenu) ===== */
+.stage{
+  min-height:100vh;
+  padding: 0 var(--pad);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Intro centrée */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap: 22px;
+  padding-top: 60px;
+}
+
+/* Typo "ça saute aux yeux" */
+.hero__title{
+  margin:0;
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  line-height: 1.05;
+}
+
+.hero__text{
+  margin:0;
+  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  line-height:1.6;
+  max-width: 980px;
+  color: var(--black);
+}
+
+.hero__cta{
+  display:flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--black);
+  color: #fff;
+  background: var(--black);
+  text-decoration:none;
+  font-weight:600;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn:hover{ transform: translateY(-2px); }
+
+.btn--ghost{
+  background: transparent;
+  color: var(--black);
+}
+.btn--ghost:hover{ opacity:.85; }
+
+/* ===== Animations "en 2 temps" ===== */
+.reveal{
+  display:inline-block;
+  opacity:0;
+  transform: translateY(28px);
+  filter: blur(2px);
+}
+
+.stage.is-playing .reveal--1{
+  animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.stage.is-playing .reveal--2{
+  animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
+  animation-delay: .35s; /* décalage entre phrase 1 et paragraphe */
+}
+
+@keyframes revealUp{
+  to{
+    opacity:1;
+    transform: translateY(0);
+    filter
