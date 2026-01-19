@@ -1,4 +1,4 @@
-/* Base */
+/* Reset simple */
 body {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
 
 /* Titre */
 .anim-title {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: #000;
     margin-bottom: 30px;
@@ -25,20 +25,20 @@ body {
 
 /* Texte */
 .anim-text {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.6;
     color: #000;
     max-width: 900px;
 }
 
-/* Animation commune */
+/* Animation */
 .anim {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 0.9s ease forwards;
 }
 
-/* Décalage entre les deux */
+/* Décalage entre les deux textes */
 .anim-text {
     animation-delay: 0.4s;
 }
@@ -50,4 +50,3 @@ body {
         transform: translateY(0);
     }
 }
-
