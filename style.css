@@ -62,23 +62,89 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   padding-top: 90px; /* laisse la place au header quand il apparaîtra */
 }
 
-/* ===== Bandeau image ===== */
-.banner{
-  margin-top: 0;
-  margin-bottom: 14px;  /* <-- rapproche "Bienvenue" du bandeau */
+/* =========================
+   BANDEAU 2 PARTIES (G/D)
+   style vagues + halo blanc
+   ========================= */
+
+.split-banner{
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* pour prendre toute la largeur même dans un container */
+  height: 220px;
+  display: grid;
+  grid-template-columns: 1fr 220px 1fr; /* centre réservé à la photo ensuite */
+  align-items: stretch;
+  position: relative;
 }
 
-/* L'image prend toute la largeur dispo, sans exploser en hauteur */
-.banner__img{
-  width: 100vw;             /* prend toute la largeur de la fenêtre */
-  max-width: none;          /* enlève la limite à 1100px */
-  height: 220px;            /* tu gardes la hauteur parfaite */
-  object-fit: cover;        /* garde le rendu propre */
-  object-position: center 35%; /* IMPORTANT : remonte l'image pour éviter de te couper */
-  display: block;
-  margin: 0;                /* plus de centrage, on colle au viewport */
-  border-radius: 0;         /* si tu veux vraiment plein écran, sinon dis-moi */
+/* Halo blanc / fondu vers le background */
+.split-banner::after{
+  content:"";
+  position:absolute;
+  inset:-1px; /* évite les lignes */
+  pointer-events:none;
+  background:
+    radial-gradient(900px 220px at 50% 70%, rgba(255,255,255,0.9), rgba(255,255,255,0) 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%);
+  mix-blend-mode: normal;
 }
+
+/* Les 2 côtés */
+.split-banner__side{
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px; /* rendu premium */
+}
+
+/* Centre vide (pour la future photo) */
+.split-banner__gap{
+  position: relative;
+}
+
+/* Fond “vagues” façon ton image */
+.split-banner__side::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(900px 320px at 30% 20%, rgba(255,255,255,0.18), rgba(255,255,255,0) 55%),
+    radial-gradient(700px 260px at 80% 30%, rgba(255,255,255,0.14), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #052a45 0%, #0b4f7f 35%, #0aa0c6 70%, #27d0d7 100%);
+  filter: saturate(1.05);
+}
+
+/* Vagues (superposition de courbes) */
+.split-banner__side::after{
+  content:"";
+  position:absolute;
+  inset:-20px;
+  background:
+    radial-gradient(1200px 220px at 20% 60%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%),
+    radial-gradient(1100px 220px at 50% 70%, rgba(255,255,255,0.14), rgba(255,255,255,0) 62%),
+    radial-gradient(1000px 220px at 80% 55%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%),
+    linear-gradient( to right, rgba(255,255,255,0.06), rgba(255,255,255,0) 45%, rgba(255,255,255,0.06) );
+  transform: rotate(-3deg);
+  opacity: .9;
+}
+
+/* Petit détail : liseré interne */
+.split-banner__side--left{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.split-banner__side--right{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Responsive : centre un peu plus étroit sur mobile */
+@media (max-width: 900px){
+  .split-banner{
+    height: 200px;
+    grid-template-columns: 1fr 160px 1fr;
+  }
+}
+
 
 
 /* ===== Hero ===== */
