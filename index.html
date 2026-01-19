@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Landing page wow (intro cinématique + animations d'ouverture) — GitHub Pages friendly." />
-  <title>Wow Landing — Demo</title>
+  <meta name="description" content="Page wow — hero cinématique teal/purple." />
+  <title>WOW Landing — Teal/Purple</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,18 +14,18 @@
 </head>
 
 <body>
-  <!-- Background decoration -->
+  <!-- Background layer -->
   <div class="bg" aria-hidden="true">
-    <div class="grain"></div>
-    <div class="blob blob--a"></div>
-    <div class="blob blob--b"></div>
-    <div class="gridfx"></div>
+    <div class="bg__grain"></div>
+    <div class="bg__blob bg__blob--a"></div>
+    <div class="bg__blob bg__blob--b"></div>
+    <div class="bg__grid"></div>
   </div>
 
-  <!-- Top bar -->
+  <!-- Topbar -->
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="Home">
+      <a class="brand" href="#top" aria-label="Retour en haut">
         <span class="brand__dot" aria-hidden="true"></span>
         <span class="brand__txt">STUDIO</span>
       </a>
@@ -36,218 +36,260 @@
         <a class="nav__link" href="#contact">Contact</a>
       </nav>
 
-      <button class="menuBtn" type="button" aria-label="Open menu">
+      <button class="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
         <span class="menuBtn__txt">MENU</span>
         <span class="menuBtn__ic" aria-hidden="true"></span>
       </button>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Menu overlay -->
+  <aside id="menu" class="menu" aria-hidden="true">
+    <div class="menu__panel">
+      <div class="menu__head">
+        <div class="menu__brand">
+          <span class="menu__dot" aria-hidden="true"></span>
+          <span class="menu__name">STUDIO</span>
+        </div>
+        <button class="menu__close" type="button" aria-label="Fermer">✕</button>
+      </div>
+
+      <nav class="menu__nav" aria-label="Navigation">
+        <a class="menu__link" href="#top"><span class="menu__n">01/</span> Home</a>
+        <a class="menu__link" href="#work"><span class="menu__n">02/</span> Work</a>
+        <a class="menu__link" href="#process"><span class="menu__n">03/</span> Process</a>
+        <a class="menu__link" href="#contact"><span class="menu__n">04/</span> Contact</a>
+      </nav>
+
+      <div class="menu__foot">
+        <p class="menu__label">Get in touch</p>
+        <a class="menu__meta" href="mailto:hello@example.com">hello@example.com</a>
+        <a class="menu__meta" href="tel:+33123456789">+33 1 23 45 67 89</a>
+        <p class="menu__small">Paris • Remote</p>
+      </div>
+    </div>
+
+    <div class="menu__backdrop" data-close="1" aria-hidden="true"></div>
+  </aside>
+
   <main id="top">
+    <!-- HERO WOW -->
     <section class="hero">
       <div class="container hero__grid">
-        <!-- Left -->
         <div class="hero__left">
-          <p class="kicker wow w1">
-            Crafted digital experiences with <span class="grad">teal/purple</span> energy.
+          <p class="kicker wow wow-1">
+            A cinematic landing page with <span class="grad">teal/purple energy</span>
           </p>
 
-          <!-- WOW title (split into letters by JS) -->
-          <h1 class="title title--wow js-split wow-title" data-split="chars" aria-label="ALINA BULUT">
-            ALINA <span class="title__accent">BULUT</span>
+          <!-- WOW TITLE (split in chars by JS) -->
+          <h1 class="title js-split wow-title" data-split="chars" aria-label="WOW STUDIO">
+            WOW <span class="title__accent">STUDIO</span>
           </h1>
 
-          <div class="titleLine wow w2" aria-hidden="true"></div>
+          <div class="underline wow wow-2" aria-hidden="true"></div>
 
-          <p class="lead wow w3">
-            A cinematic landing with bold typography, crisp motion, and tactile UI. Built in plain HTML/CSS/JS —
-            perfect for GitHub Pages.
+          <p class="lead wow wow-3">
+            Une page qui claque dès l’ouverture : texte <strong>lettre par lettre</strong>, shapes qui flottent,
+            lignes qui se dessinent, et un rythme d’animation “premium”.
           </p>
 
-          <div class="actions wow w4">
-            <a class="btn btn--primary" href="#work">RECENT PROJECTS</a>
-            <a class="btn btn--ghost" href="#contact">GET IN TOUCH</a>
+          <div class="actions wow wow-4">
+            <a class="btn btn--primary" href="#work">RECENT WORK</a>
+            <a class="btn btn--ghost" href="#process">PROCESS</a>
           </div>
 
-          <div class="facts wow w5">
+          <div class="facts wow wow-5">
             <div class="fact">
-              <span class="fact__k">BASED IN</span>
-              <span class="fact__v">ISTANBUL</span>
+              <span class="fact__k">STYLE</span>
+              <span class="fact__v">CINEMATIC • MINIMAL</span>
             </div>
             <div class="fact">
-              <span class="fact__k">FOCUS</span>
-              <span class="fact__v">IDENTITY • UI • MOTION</span>
+              <span class="fact__k">VIBE</span>
+              <span class="fact__v">TEAL • PURPLE • GLOW</span>
             </div>
           </div>
 
-          <div class="micro wow w6">
-            <span class="micro__dot" aria-hidden="true"></span>
-            <span class="micro__txt">Scroll to feel the rhythm</span>
+          <div class="micro wow wow-6">
+            <div class="micro__chip">⚡ Load animations</div>
+            <div class="micro__chip">✦ Parallax shapes</div>
+            <div class="micro__chip">⬡ Smooth hover</div>
           </div>
         </div>
 
-        <!-- Right -->
         <div class="hero__right">
-          <figure class="media wow w3">
-            <!-- PLACEHOLDER image -->
-            <img src="assets/hero.jpg" alt="Hero visual (placeholder)" loading="lazy" />
+          <!-- Main media -->
+          <figure class="media wow wow-3">
+            <!-- Remplace par ta vraie image -->
+            <img src="assets/hero.jpg" alt="Hero image (placeholder)" loading="lazy" />
             <figcaption class="media__cap">
               <span class="media__dot" aria-hidden="true"></span>
-              Award-grade layout • premium motion • crisp detail
+              crafted motion • clean design • strong identity
             </figcaption>
           </figure>
 
-          <!-- Animated shapes -->
+          <!-- Floating shapes -->
           <div class="shape shape--ring" aria-hidden="true"></div>
           <div class="shape shape--dots" aria-hidden="true"></div>
-          <div class="shape shape--arc" aria-hidden="true"></div>
-          <div class="shape shape--tick" aria-hidden="true"></div>
+          <div class="shape shape--plus" aria-hidden="true"></div>
+          <div class="shape shape--beam" aria-hidden="true"></div>
 
-          <!-- I get inspired by -->
-          <div class="inspired wow w6">
+          <!-- Inspired card -->
+          <div class="inspired wow wow-6">
             <p class="inspired__k">I get inspired by</p>
-            <p class="inspired__v">
-              honest materials, clean systems, and motion that feels human.
-            </p>
+            <p class="inspired__v">contrast, rhythm, typography, and bold micro-interactions.</p>
           </div>
         </div>
       </div>
-
-      <!-- Scroll hint line -->
-      <div class="scrollHint" aria-hidden="true">
-        <div class="scrollHint__line"></div>
-        <div class="scrollHint__dot"></div>
-      </div>
     </section>
 
-    <!-- Work -->
-    <section id="work" class="section section--alt">
+    <!-- WORK -->
+    <section id="work" class="section">
       <div class="container">
-        <div class="headRow">
-          <div>
-            <p class="eyebrow reveal">Recent projects</p>
-            <h2 class="h2 reveal" style="transition-delay:.04s;">Selected work that feels alive.</h2>
-          </div>
-          <a class="btn btn--ghost reveal" style="transition-delay:.08s;" href="#contact">HIRE ME</a>
+        <div class="sectionHead">
+          <p class="eyebrow reveal">Recent work</p>
+          <h2 class="h2 reveal" style="transition-delay:.06s;">Visuels qui respirent, interactions qui surprennent.</h2>
         </div>
 
         <div class="cards">
           <a class="card reveal" href="#">
             <div class="card__media">
-              <img src="assets/project-1.jpg" alt="Project 1 (placeholder)" loading="lazy" />
+              <img src="assets/work-1.jpg" alt="Work 1 placeholder" loading="lazy">
             </div>
             <div class="card__body">
-              <p class="card__t">Dashboard UI</p>
-              <p class="card__m">Design • Motion • Systems</p>
+              <p class="card__title">Dashboard concept</p>
+              <p class="card__meta">UI • Data • Motion</p>
             </div>
           </a>
 
-          <a class="card reveal" href="#" style="transition-delay:.04s;">
+          <a class="card reveal" href="#" style="transition-delay:.06s;">
             <div class="card__media">
-              <img src="assets/project-2.jpg" alt="Project 2 (placeholder)" loading="lazy" />
+              <img src="assets/work-2.jpg" alt="Work 2 placeholder" loading="lazy">
             </div>
             <div class="card__body">
-              <p class="card__t">Email Template</p>
-              <p class="card__m">HTML • Performance • Craft</p>
+              <p class="card__title">Email template</p>
+              <p class="card__meta">HTML • Layout • Performance</p>
             </div>
           </a>
 
-          <a class="card reveal" href="#" style="transition-delay:.08s;">
+          <a class="card reveal" href="#" style="transition-delay:.12s;">
             <div class="card__media">
-              <img src="assets/project-3.jpg" alt="Project 3 (placeholder)" loading="lazy" />
+              <img src="assets/work-3.jpg" alt="Work 3 placeholder" loading="lazy">
             </div>
             <div class="card__body">
-              <p class="card__t">Landing Motion</p>
-              <p class="card__m">Typography • Micro-UX • Wow</p>
+              <p class="card__title">Landing motion</p>
+              <p class="card__meta">Copy • Anim • UX</p>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Process -->
-    <section id="process" class="section">
+    <!-- PROCESS -->
+    <section id="process" class="section section--alt">
       <div class="container">
-        <div class="headRow">
+        <div class="sectionHead sectionHead--row">
           <div>
-            <p class="eyebrow reveal">This is my process</p>
-            <h2 class="h2 reveal" style="transition-delay:.04s;">Fast, sharp, obsessive about detail.</h2>
+            <p class="eyebrow reveal">This is the process</p>
+            <h2 class="h2 reveal" style="transition-delay:.06s;">Simple, net, efficace.</h2>
           </div>
+          <a class="btn btn--ghost reveal" href="#contact" style="transition-delay:.12s;">LET’S TALK</a>
         </div>
 
         <div class="steps">
           <article class="step reveal">
             <div class="step__n">01</div>
-            <h3 class="step__t">Discover</h3>
-            <p class="step__p">Align on goals, audience, and the one metric that matters.</p>
+            <h3 class="step__t">Direction</h3>
+            <p class="step__p">On fixe le message, le rythme, et la hiérarchie visuelle.</p>
           </article>
 
-          <article class="step reveal" style="transition-delay:.04s;">
+          <article class="step reveal" style="transition-delay:.06s;">
             <div class="step__n">02</div>
             <h3 class="step__t">Design</h3>
-            <p class="step__p">Build a strong typographic system + layout that breathes.</p>
+            <p class="step__p">On construit l’interface et les détails “premium”.</p>
           </article>
 
-          <article class="step reveal" style="transition-delay:.08s;">
+          <article class="step reveal" style="transition-delay:.12s;">
             <div class="step__n">03</div>
-            <h3 class="step__t">Polish</h3>
-            <p class="step__p">Motion, micro-interactions, performance, and production-ready delivery.</p>
+            <h3 class="step__t">Motion</h3>
+            <p class="step__p">Animations au load + micro-interactions au scroll.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section section--alt">
-      <div class="container cta">
-        <div class="cta__left">
-          <p class="eyebrow reveal">Let’s build something</p>
-          <h2 class="h2 reveal" style="transition-delay:.04s;">Want this wow on your own website?</h2>
-          <p class="p reveal" style="transition-delay:.08s;">
-            Replace placeholders with your content and you’re ready to deploy on GitHub Pages.
-          </p>
-          <div class="cta__actions reveal" style="transition-delay:.12s;">
-            <a class="btn btn--primary" href="#">EMAIL</a>
-            <a class="btn btn--ghost" href="#top">BACK TO TOP</a>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta__left">
+            <p class="eyebrow">Contact</p>
+            <h2 class="h2">Ready to launch something unforgettable?</h2>
+            <p class="p">Tu peux remplacer ce bloc par ton contenu. Le design est prêt.</p>
+            <div class="cta__actions">
+              <a class="btn btn--primary" href="mailto:hello@example.com">GET IN TOUCH</a>
+              <a class="btn btn--ghost" href="#top">BACK TO TOP</a>
+            </div>
+          </div>
+          <div class="cta__right">
+            <div class="cta__panel">
+              <p class="cta__k">Email</p>
+              <p class="cta__v">hello@example.com</p>
+              <div class="cta__line"></div>
+              <p class="cta__k">Phone</p>
+              <p class="cta__v">+33 1 23 45 67 89</p>
+            </div>
           </div>
         </div>
 
-        <div class="cta__right reveal" style="transition-delay:.06s;">
-          <div class="cta__panel">
-            <p class="cta__k">Quick notes</p>
-            <ul class="cta__list">
-              <li>Intro animation runs on page load</li>
-              <li>Scroll reveals + hover motion</li>
-              <li>No libraries, GitHub Pages ready</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <footer class="footer">
-        <div class="container footer__inner">
-          <p class="footer__l">© <span id="y"></span> Studio</p>
+        <footer class="footer">
+          <p class="footer__l">© <span id="y"></span> WOW STUDIO</p>
           <div class="footer__r">
-            <a class="textLink" href="#work">Work</a>
+            <a class="textLink" href="#">LinkedIn</a>
             <span class="sep">/</span>
-            <a class="textLink" href="#process">Process</a>
+            <a class="textLink" href="#">GitHub</a>
             <span class="sep">/</span>
-            <a class="textLink" href="#contact">Contact</a>
+            <a class="textLink" href="#">Instagram</a>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </section>
   </main>
 
   <script>
-    // 1) trigger load animation
+    // year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Menu overlay
+    const menu = document.getElementById('menu');
+    const openBtn = document.querySelector('.menuBtn');
+    const closeBtn = document.querySelector('.menu__close');
+    const backdrop = document.querySelector('.menu__backdrop');
+    const links = document.querySelectorAll('.menu__link');
+
+    function openMenu(){
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden','false');
+      openBtn.setAttribute('aria-expanded','true');
+      document.documentElement.classList.add('no-scroll');
+    }
+    function closeMenu(){
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden','true');
+      openBtn.setAttribute('aria-expanded','false');
+      document.documentElement.classList.remove('no-scroll');
+    }
+    openBtn.addEventListener('click', () => menu.classList.contains('is-open') ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+    links.forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+    // Load-trigger: start intro
     window.addEventListener("load", () => {
       document.body.classList.add("is-ready");
-      document.getElementById("y").textContent = new Date().getFullYear();
     });
 
-    // 2) mouse parallax variables (subtle)
+    // Mouse parallax for shapes
     const root = document.documentElement;
     window.addEventListener("mousemove", (e) => {
       const x = (e.clientX / window.innerWidth) - 0.5;
@@ -256,49 +298,60 @@
       root.style.setProperty("--my", y.toFixed(3));
     });
 
-    // 3) split title into words+chars + stagger delays (WOW)
+    // Split text into chars (WOW title)
     function splitToChars(el){
-      // preserve nested accent span by reading text nodes; easiest: render plain text then re-add accent via CSS class
-      // We'll split full text content and keep spaces.
-      const text = el.textContent.trim().replace(/\s+/g, " ");
-      el.textContent = "";
-      el.classList.add("split");
+      const original = el.innerHTML;
+      // Keep accent span if present: split plain text nodes only
+      const temp = document.createElement("span");
+      temp.innerHTML = original;
 
-      const parts = text.split(/(\s+)/);
-      let i = 0;
+      const out = document.createElement("span");
+      out.className = "split";
+      let charIndex = 0;
 
-      parts.forEach(part => {
-        if (part.trim() === "") {
-          el.appendChild(document.createTextNode(part));
-          return;
-        }
+      function addTextNode(text, parent){
+        const parts = text.split(/(\s+)/);
+        parts.forEach(part => {
+          if(part.trim() === ""){
+            parent.appendChild(document.createTextNode(part));
+            return;
+          }
+          const word = document.createElement("span");
+          word.className = "split-word";
+          parent.appendChild(word);
 
-        const word = document.createElement("span");
-        word.className = "split-word";
-        el.appendChild(word);
+          [...part].forEach(ch => {
+            const span = document.createElement("span");
+            span.className = "split-char";
+            span.textContent = ch;
 
-        [...part].forEach((ch) => {
-          const s = document.createElement("span");
-          s.className = "split-char";
-          s.textContent = ch;
-
-          // tighter stagger = more cinematic
-          const base = 0.10;
-          const step = 0.028;
-          s.style.animationDelay = (base + i * step).toFixed(3) + "s";
-          word.appendChild(s);
-          i++;
+            const baseDelay = 0.12;   // sec
+            const step = 0.030;       // sec per char
+            span.style.animationDelay = (baseDelay + charIndex * step).toFixed(3) + "s";
+            word.appendChild(span);
+            charIndex++;
+          });
         });
+      }
+
+      // Walk nodes to preserve <span class="title__accent">
+      [...temp.childNodes].forEach(node => {
+        if(node.nodeType === Node.TEXT_NODE){
+          addTextNode(node.textContent, out);
+        } else if(node.nodeType === Node.ELEMENT_NODE){
+          const clone = node.cloneNode(false);
+          out.appendChild(clone);
+          addTextNode(node.textContent, clone);
+        }
       });
 
-      // accent last word (simple heuristic): wrap last word chars in gradient via parent
-      const words = el.querySelectorAll(".split-word");
-      if (words.length) words[words.length - 1].classList.add("accent-word");
+      el.innerHTML = "";
+      el.appendChild(out);
     }
 
     document.querySelectorAll(".js-split[data-split='chars']").forEach(splitToChars);
 
-    // 4) Scroll reveal (Webflow-like)
+    // Reveal on scroll (bonus)
     const revealEls = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach(ent => {
