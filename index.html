@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Freelance</title>
+  <meta name="description" content="Portfolio — page d'accueil avec animations et effets visuels." />
+  <title>Aurélien HEBERT — Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,106 +14,272 @@
 </head>
 
 <body>
-  <!-- Background -->
+  <!-- Background FX -->
   <div class="bg" aria-hidden="true">
-    <div class="bg__grain"></div>
-    <div class="bg__blob bg__blob--a"></div>
-    <div class="bg__blob bg__blob--b"></div>
+    <div class="grain"></div>
+    <div class="blob blob--teal"></div>
+    <div class="blob blob--purple"></div>
+    <div class="grid"></div>
+    <div class="scan"></div>
   </div>
 
   <!-- Top bar -->
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="#" aria-label="Home">
+      <a class="brand" href="#top" aria-label="Home">
         <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__txt">AZ</span>
+        <span class="brand__txt">AH</span>
       </a>
 
-      <button class="menuBtn" type="button" aria-label="Open menu">
+      <nav class="nav" aria-label="Navigation">
+        <a class="nav__link" href="#work">Work</a>
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <button class="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
         <span class="menuBtn__txt">MENU</span>
         <span class="menuBtn__ic" aria-hidden="true"></span>
       </button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main>
+  <!-- Menu overlay -->
+  <aside id="menu" class="menu" aria-hidden="true">
+    <div class="menu__panel">
+      <div class="menu__head">
+        <div class="menu__brand">
+          <span class="menu__dot" aria-hidden="true"></span>
+          <span class="menu__name">Aurélien HEBERT</span>
+        </div>
+        <button class="menu__close" type="button" aria-label="Close menu">✕</button>
+      </div>
+
+      <nav class="menu__nav" aria-label="Menu">
+        <a class="menu__link" href="#top"><span class="menu__n">01/</span> Home</a>
+        <a class="menu__link" href="#work"><span class="menu__n">02/</span> Recent work</a>
+        <a class="menu__link" href="#about"><span class="menu__n">03/</span> About</a>
+        <a class="menu__link" href="#contact"><span class="menu__n">04/</span> Contact</a>
+      </nav>
+
+      <div class="menu__foot">
+        <p class="menu__label">Quick contact</p>
+        <a class="menu__meta" href="mailto:m.hebert.aurelien.pro@gmail.com">m.hebert.aurelien.pro@gmail.com</a>
+        <a class="menu__meta" href="tel:+33659923323">06 59 92 33 23</a>
+        <p class="menu__small">Rouen, France</p>
+
+        <div class="menu__chips">
+          <a class="chip" href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a class="chip" href="#" aria-label="GitHub">GitHub</a>
+          <a class="chip" href="#" aria-label="CV">CV</a>
+        </div>
+      </div>
+    </div>
+    <div class="menu__backdrop" data-close="1" aria-hidden="true"></div>
+  </aside>
+
+  <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero__grid">
-        <!-- Left -->
         <div class="hero__left">
-          <p class="kicker a a-1">
-            Je suis freelancer
+          <p class="kicker fx fx-1">
+            Consultant freelance — <span class="grad">data</span>, reporting & performance
           </p>
 
-          <h1 class="title" aria-label="ALINA BULUT">
-            <span class="title__line">
-              <span class="title__word">Aurélien</span>
-            </span>
-            <span class="title__line">
-              <span class="title__word title__word--accent">HEBERT</span>
-            </span>
+          <!-- WAOUH TITLE (split by JS into letters) -->
+          <h1 class="title title--wow js-split fx fx-2" data-split="chars">
+            Aurélien <span class="title__accent">HEBERT</span>
           </h1>
 
-          <div class="divider a a-2" aria-hidden="true"></div>
+          <div class="divider fx fx-3" aria-hidden="true"></div>
 
-          <p class="lead a a-3">
-            I design warm, minimal spaces and thoughtful interiors with a strong focus on
-            functionality, materials, and natural light.
+          <p class="lead fx fx-4">
+            Je transforme des données brutes en décisions rapides :
+            KPI clairs, dashboards lisibles, automatisations fiables — et une couche “com” avec des emails HTML B2B.
           </p>
 
-          <div class="actions a a-4">
-            <a class="btn btn--primary" href="#">EXPLORE</a>
-            <a class="btn btn--ghost" href="#">RECENT PROJECTS</a>
+          <div class="actions fx fx-5">
+            <a class="btn btn--primary" href="#work">RECENT WORK</a>
+            <a class="btn btn--ghost" href="#contact">GET IN TOUCH</a>
           </div>
 
-          <div class="facts a a-5">
+          <div class="facts fx fx-6">
             <div class="fact">
               <span class="fact__k">BASED IN</span>
-              <span class="fact__v">ISTANBUL</span>
+              <span class="fact__v">ROUEN</span>
             </div>
             <div class="fact">
               <span class="fact__k">FOCUS</span>
-              <span class="fact__v">INTERIORS • ARCHITECTURE</span>
+              <span class="fact__v">KPI • REPORTING • AUTOMATION</span>
+            </div>
+          </div>
+
+          <!-- Micro “wow” detail -->
+          <div class="ticker fx fx-7" aria-hidden="true">
+            <div class="ticker__track">
+              <span>Dashboards</span><span>Automation</span><span>Performance</span><span>HTML Email</span>
+              <span>Dashboards</span><span>Automation</span><span>Performance</span><span>HTML Email</span>
             </div>
           </div>
         </div>
 
-        <!-- Right -->
         <div class="hero__right">
-          <div class="media a a-3">
-            <!-- placeholder image -->
-            <img src="images/hero.jpg" alt="Hero image (placeholder)" loading="lazy" />
-            <div class="media__cap">
+          <figure class="media fx fx-4">
+            <img src="assets/hero.jpg" alt="Hero image (placeholder)" loading="lazy" />
+            <figcaption class="media__cap">
               <span class="media__dot" aria-hidden="true"></span>
-              Award winning studio — concept & interiors
-            </div>
-          </div>
+              Premium reporting — clean KPI stories
+            </figcaption>
+          </figure>
 
-          <!-- Floating shapes (like the template vibe) -->
+          <!-- Floating shapes / lines -->
           <div class="shape shape--ring" aria-hidden="true"></div>
           <div class="shape shape--dots" aria-hidden="true"></div>
-          <div class="shape shape--line" aria-hidden="true"></div>
+          <div class="shape shape--arc" aria-hidden="true"></div>
+          <div class="shape shape--x" aria-hidden="true"></div>
 
-          <!-- STOP POINT: "I get inspired by" card -->
-          <div class="inspired a a-6">
-            <p class="inspired__k">I get inspired by</p>
-            <p class="inspired__v">
-              raw textures, honest materials, and the rhythm of the city.
-            </p>
+          <!-- "I get inspired by" vibe -->
+          <div class="card card--float fx fx-7">
+            <p class="card__k">I get inspired by</p>
+            <p class="card__v">clarity, elegant constraints, and systems that scale.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- RECENT WORK -->
+    <section id="work" class="work">
+      <div class="container">
+        <div class="sectionHead">
+          <p class="eyebrow reveal">Recent work</p>
+          <h2 class="h2 reveal" style="transition-delay:.05s;">Selected projects that ship results</h2>
+        </div>
+
+        <div class="work__grid">
+          <a class="workCard reveal" href="#">
+            <div class="workCard__media">
+              <img src="assets/work-1.jpg" alt="Work 1 (placeholder)" loading="lazy">
+            </div>
+            <div class="workCard__body">
+              <p class="workCard__t">KPI Dashboard — Ops</p>
+              <p class="workCard__m">Reporting • Clarity • Speed</p>
+            </div>
+          </a>
+
+          <a class="workCard reveal" href="#" style="transition-delay:.04s;">
+            <div class="workCard__media">
+              <img src="assets/work-2.jpg" alt="Work 2 (placeholder)" loading="lazy">
+            </div>
+            <div class="workCard__body">
+              <p class="workCard__t">Automation Pipeline</p>
+              <p class="workCard__m">Process • Reliability • Time</p>
+            </div>
+          </a>
+
+          <a class="workCard reveal" href="#" style="transition-delay:.08s;">
+            <div class="workCard__media">
+              <img src="assets/work-3.jpg" alt="Work 3 (placeholder)" loading="lazy">
+            </div>
+            <div class="workCard__body">
+              <p class="workCard__t">HTML Email System</p>
+              <p class="workCard__m">Design • HTML • KPI</p>
+            </div>
+          </a>
+
+          <a class="workCard reveal" href="#" style="transition-delay:.12s;">
+            <div class="workCard__media">
+              <img src="assets/work-4.jpg" alt="Work 4 (placeholder)" loading="lazy">
+            </div>
+            <div class="workCard__body">
+              <p class="workCard__t">Prospection Playbook</p>
+              <p class="workCard__m">Messaging • Calls • Conversion</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <img src="assets/about.jpg" alt="About image (placeholder)" loading="lazy" />
+        </div>
+
+        <div class="about__copy">
+          <p class="eyebrow reveal">About</p>
+          <h2 class="h2 reveal" style="transition-delay:.05s;">
+            I build calm, high-signal systems.
+          </h2>
+          <p class="p reveal" style="transition-delay:.10s;">
+            Des interfaces sobres, des métriques qui comptent, des automatisations robustes.
+            On coupe le bruit, on garde l’essentiel.
+          </p>
+
+          <div class="about__stats reveal" style="transition-delay:.14s;">
+            <div class="stat">
+              <span class="stat__k">Fast</span>
+              <span class="stat__v">execution</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">Clean</span>
+              <span class="stat__v">UX & reporting</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">Solid</span>
+              <span class="stat__v">automation</span>
+            </div>
+          </div>
+
+          <div class="chips reveal" style="transition-delay:.18s;">
+            <span class="chip chip--solid">KPI</span>
+            <span class="chip chip--solid">Dashboards</span>
+            <span class="chip chip--solid">Automation</span>
+            <span class="chip chip--solid">HTML Email</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container contact__wrap reveal">
+        <p class="contact__k">IF YOU LIKE WHAT YOU SEE</p>
+        <h2 class="contact__t">Let’s build something sharp.</h2>
+        <p class="contact__p">Un message suffit. Je réponds vite avec une proposition claire.</p>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:m.hebert.aurelien.pro@gmail.com">EMAIL ME</a>
+          <a class="btn btn--ghost" href="tel:+33659923323">CALL</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__left">© <span id="y"></span> Aurélien HEBERT</p>
+        <div class="footer__right">
+          <a class="textLink" href="#top">Top</a>
+          <span class="sep">/</span>
+          <a class="textLink" href="#">LinkedIn</a>
+          <span class="sep">/</span>
+          <a class="textLink" href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
   <script>
-    // intro animations (load)
+    // Year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Load-triggered WOW animations
     window.addEventListener("load", () => {
       document.body.classList.add("is-ready");
     });
 
-    // tiny parallax on mouse for shapes (optional but feels "Webflow-like")
+    // Mouse parallax for shapes
     const root = document.documentElement;
     window.addEventListener("mousemove", (e) => {
       const x = (e.clientX / window.innerWidth) - 0.5;
@@ -120,6 +287,86 @@
       root.style.setProperty("--mx", x.toFixed(3));
       root.style.setProperty("--my", y.toFixed(3));
     });
+
+    // Split title to words + chars (waouh text)
+    function splitToChars(el){
+      const original = el.innerHTML;
+      // preserve accent span by temporarily marking it
+      el.innerHTML = original.replace(/<span class="title__accent">([\s\S]*?)<\/span>/g, '%%ACCENT_START%%$1%%ACCENT_END%%');
+
+      const text = el.textContent;
+      el.textContent = "";
+      el.classList.add("split");
+
+      const tokens = text.split(/(\s+)/);
+      let idx = 0;
+
+      tokens.forEach(tok => {
+        if (tok.trim() === "") {
+          el.appendChild(document.createTextNode(tok));
+          return;
+        }
+
+        const wordWrap = document.createElement("span");
+        wordWrap.className = "split-word";
+        el.appendChild(wordWrap);
+
+        [...tok].forEach(ch => {
+          const s = document.createElement("span");
+          s.className = "split-char";
+          s.textContent = ch;
+
+          const base = 0.10;
+          const step = 0.028;
+          s.style.animationDelay = (base + idx * step).toFixed(3) + "s";
+          wordWrap.appendChild(s);
+          idx++;
+        });
+      });
+
+      // restore accent styling: re-apply gradient to last word by wrapping letters
+      // (simple heuristic: apply accent to last word)
+      const wordEls = el.querySelectorAll(".split-word");
+      if (wordEls.length) wordEls[wordEls.length - 1].classList.add("split-word--accent");
+    }
+    document.querySelectorAll(".js-split[data-split='chars']").forEach(splitToChars);
+
+    // Reveal on scroll (below the fold)
+    const revealEls = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(ent => {
+        if(ent.isIntersecting){
+          ent.target.classList.add("in");
+          io.unobserve(ent.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // Menu overlay
+    const menu = document.getElementById("menu");
+    const openBtn = document.querySelector(".menuBtn");
+    const closeBtn = document.querySelector(".menu__close");
+    const backdrop = document.querySelector(".menu__backdrop");
+    const links = document.querySelectorAll(".menu__link");
+
+    function openMenu(){
+      menu.classList.add("is-open");
+      menu.setAttribute("aria-hidden","false");
+      openBtn.setAttribute("aria-expanded","true");
+      document.documentElement.classList.add("no-scroll");
+    }
+    function closeMenu(){
+      menu.classList.remove("is-open");
+      menu.setAttribute("aria-hidden","true");
+      openBtn.setAttribute("aria-expanded","false");
+      document.documentElement.classList.remove("no-scroll");
+    }
+    openBtn.addEventListener("click", () => menu.classList.contains("is-open") ? closeMenu() : openMenu());
+    closeBtn.addEventListener("click", closeMenu);
+    backdrop.addEventListener("click", closeMenu);
+    links.forEach(a => a.addEventListener("click", closeMenu));
+    window.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
   </script>
 </body>
 </html>
