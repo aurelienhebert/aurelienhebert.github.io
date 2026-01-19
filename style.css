@@ -141,28 +141,78 @@ body.is-playing .reveal--2{
 
 
 
-/* ===== BANDEAU TURQUOISE (GRAPHIC & CLASSY) ===== */
+/* ===== BANDEAU TURQUOISE FIN & CENTRÉ ===== */
 
 .art-banner{
   position: relative;
-  height: 190px;                 /* bandeau moins haut */
-  border-radius: 0;              /* si tu veux des coins arrondis, dis-moi */
-  background: linear-gradient(135deg, #0d6f7a 0%, #0fa3a9 45%, #17c0c8 100%);
+  height: 140px; /* beaucoup plus bas */
+  background: linear-gradient(
+    135deg,
+    #0d6f7a 0%,
+    #0fa3a9 45%,
+    #17c0c8 100%
+  );
   overflow: visible;
 }
 
-/* Effet graphique (lignes + lumière) */
+/* Effet graphique très discret */
 .art-overlay{
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(900px 220px at 20% 35%, rgba(255,255,255,0.28), transparent 60%),
-    radial-gradient(700px 200px at 80% 20%, rgba(255,255,255,0.18), transparent 60%),
-    repeating-linear-gradient(
-      135deg,
-      rgba(255,255,255,0.10) 0,
-      rgba(255,255,255,0.10) 18px,
-      rgba(255,255,255,0.00) 18p
+    radial-gradient(
+      600px 160px at 30% 40%,
+      rgba(255,255,255,0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      500px 140px at 70% 30%,
+      rgba(255,255,255,0.15),
+      transparent 60%
+    );
+  opacity: 0.6;
+}
 
+/* Cercle blanc — PROPORTION & CENTRAGE */
+.photo-circle{
+  position: absolute;
+  left: 50%;
+  bottom: -42px;                 /* dépassement maîtrisé */
+  transform: translateX(-50%);
+  width: 110px;                  /* PLUS PETIT */
+  height: 110px;
+  background: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+  border: 4px solid rgba(255,255,255,0.95);
+}
 
+/* Photo bien contenue (pas gros plan) */
+.photo-circle img{
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Ajustement du contenu suivant */
+.hero{
+  margin-top: 70px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .art-banner{ height: 120px; }
+
+  .photo-circle{
+    width: 96px;
+    height: 96px;
+    bottom: -36px;
+  }
+
+  .hero{ margin-top: 60px; }
+}
