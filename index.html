@@ -3,436 +3,421 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Aurélien Hébert — Consultant freelance en data, reporting automatisé, emails HTML B2B & téléprospection." />
-  <title>Aurélien Hébert — Consultant freelance</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Aurélien HEBERT — Consultant freelance en data, reporting automatisé, emails HTML B2B & téléprospection." />
+  <title>Aurélien HEBERT — Consultant freelance</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Police proche du style Webflow template (sans copier) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Background decoration -->
-  <div class="bg-blur bg-blur--a"></div>
-  <div class="bg-blur bg-blur--b"></div>
+  <!-- Deco background -->
+  <div class="bg-blob bg-blob--a" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--b" aria-hidden="true"></div>
 
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Retour en haut">
-        <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__text">Aurélien Hébert</span>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="logo" href="#top">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">Aurélien HEBERT</span>
       </a>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <a class="nav__link" href="#services">Services</a>
-        <a class="nav__link" href="#experience">Expériences</a>
-        <a class="nav__link" href="#competences">Compétences</a>
-        <a class="nav__link" href="#contact">Contact</a>
-      </nav>
-
-      <a class="btn btn--primary header__cta" href="#contact">Me contacter</a>
+      <button class="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menuBtn__label">MENU</span>
+        <span class="menuBtn__icon" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
+  <!-- Overlay menu -->
+  <aside id="menu" class="menu" aria-hidden="true">
+    <div class="menu__panel">
+      <div class="menu__head">
+        <div class="menu__brand">
+          <span class="menu__brandMark" aria-hidden="true"></span>
+          <span class="menu__brandText">Aurélien HEBERT</span>
+        </div>
+        <button class="menu__close" type="button" aria-label="Fermer le menu">
+          ✕
+        </button>
+      </div>
+
+      <nav class="menu__nav" aria-label="Navigation">
+        <a class="menu__link" href="#top"><span class="menu__n">01/</span> Home</a>
+        <a class="menu__link" href="#about"><span class="menu__n">02/</span> About</a>
+        <a class="menu__link" href="#projects"><span class="menu__n">03/</span> Projects</a>
+        <a class="menu__link" href="#insights"><span class="menu__n">04/</span> Insights</a>
+        <a class="menu__link" href="#services"><span class="menu__n">05/</span> Services</a>
+        <a class="menu__link" href="#contact"><span class="menu__n">06/</span> Contact</a>
+      </nav>
+
+      <div class="menu__meta">
+        <p class="menu__metaTitle">Contact</p>
+        <a class="menu__metaLink" href="mailto:m.hebert.aurelien.pro@gmail.com">m.hebert.aurelien.pro@gmail.com</a>
+        <a class="menu__metaLink" href="tel:+33659923323">06 59 92 33 23</a>
+        <p class="menu__metaSmall">Rouen, France</p>
+
+        <div class="menu__social">
+          <!-- Remplace # par tes liens -->
+          <a class="chiplink" href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a class="chiplink" href="#" aria-label="GitHub">GitHub</a>
+          <a class="chiplink" href="#" aria-label="CV PDF">CV</a>
+        </div>
+      </div>
+    </div>
+    <div class="menu__backdrop" data-close="1" aria-hidden="true"></div>
+  </aside>
+
   <main id="top">
-    <!-- HERO -->
+    <!-- HERO (à la manière du template : grand visuel + intro) -->
     <section class="hero">
       <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="pill">
-            <span class="pill__dot" aria-hidden="true"></span>
-            Consultant freelance
-          </p>
+        <div class="hero__left">
+          <p class="kicker">I am a consultant in <span class="grad">data & performance</span></p>
 
           <h1 class="hero__title">
-            Data, reporting automatisé<br />
-            <span class="gradient"> & téléprospection</span>
+            Aurélien<br>
+            <span class="hero__titleBig">HEBERT</span>
           </h1>
 
           <p class="hero__subtitle">
-            J’accompagne les entreprises dans l’analyse de leurs données, l’optimisation de leurs reportings
-            et la création d’emails professionnels en HTML. À l’aise au téléphone, j’interviens aussi en
-            téléprospection pour générer des opportunités commerciales.
+            Consultant freelance spécialisé en <strong>reporting automatisé</strong>, <strong>analyse KPI</strong>,
+            <strong>emails HTML B2B</strong> et <strong>téléprospection</strong>. Objectif : du concret, du fiable, du mesurable.
           </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#contact">Demander un devis</a>
-            <a class="btn btn--ghost" href="#services">Voir mes services</a>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contact">GET IN TOUCH</a>
+            <a class="btn btn--ghost" href="#projects">SEE PROJECTS</a>
           </div>
 
-          <div class="hero__meta">
-            <div class="meta">
-              <span class="meta__label">📍 Localisation</span>
-              <span class="meta__value">Rouen, France</span>
+          <div class="hero__facts">
+            <div class="fact">
+              <span class="fact__k">Based in</span>
+              <span class="fact__v">Rouen</span>
             </div>
-            <div class="meta">
-              <span class="meta__label">📞 Téléphone</span>
-              <a class="meta__value link" href="tel:+33659923323">06 59 92 33 23</a>
+            <div class="fact">
+              <span class="fact__k">Focus</span>
+              <span class="fact__v">KPI • Dashboards • Automation</span>
             </div>
-            <div class="meta">
-              <span class="meta__label">✉️ Email</span>
-              <a class="meta__value link" href="mailto:m.hebert.aurelien.pro@gmail.com">m.hebert.aurelien.pro@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="hero__badges" aria-label="Points forts">
-            <span class="badge">KPI & pilotage</span>
-            <span class="badge">Dashboards & reporting</span>
-            <span class="badge">Emails HTML B2B</span>
-            <span class="badge">Prospection & RDV</span>
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="portrait-card">
-            <!-- PLACEHOLDER IMAGE: ajoute une image /assets/aurelien.jpg plus tard -->
-            <div class="portrait">
-              <img
-                src="assets/portrait-placeholder.jpg"
-                alt="Portrait d'Aurélien Hébert (à remplacer)"
-                loading="lazy"
-              />
-            </div>
+        <div class="hero__right">
+          <!-- IMAGE PLACEHOLDER: remplace par une image type "portrait / hero" -->
+          <figure class="heroMedia">
+            <img src="assets/hero-portrait-placeholder.jpg" alt="Portrait (à remplacer)" loading="lazy">
+            <figcaption class="heroMedia__cap">
+              <span class="heroMedia__capDot" aria-hidden="true"></span>
+              Reporting & performance — orienté résultats
+            </figcaption>
+          </figure>
 
-            <div class="portrait-card__content">
-              <p class="portrait-card__name">Aurélien Hébert</p>
-              <p class="portrait-card__role">Consultant freelance</p>
-
-              <div class="portrait-card__stats">
-                <div class="stat">
-                  <span class="stat__k">+8 ans</span>
-                  <span class="stat__v">Expérience</span>
-                </div>
-                <div class="stat">
-                  <span class="stat__k">Depuis 2021</span>
-                  <span class="stat__v">Emails B2B</span>
-                </div>
-                <div class="stat">
-                  <span class="stat__k">Data</span>
-                  <span class="stat__v">Automatisation</span>
-                </div>
-              </div>
-
-              <div class="portrait-card__links">
-                <!-- Remplace # par tes liens -->
-                <a class="icon-link" href="#" aria-label="LinkedIn">
-                  <span aria-hidden="true">in</span>
-                </a>
-                <a class="icon-link" href="#" aria-label="GitHub">
-                  <span aria-hidden="true">GH</span>
-                </a>
-                <a class="icon-link" href="#" aria-label="Télécharger le CV (PDF)">
-                  <span aria-hidden="true">CV</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="floating-card floating-card--1">
-            <p class="floating-card__title">Reporting & automatisation</p>
-            <p class="floating-card__text">Industrialisation, dashboards, suivi d’incentives, pilotage opérationnel.</p>
-          </div>
-
-          <div class="floating-card floating-card--2">
-            <p class="floating-card__title">Téléprospection B2B</p>
-            <p class="floating-card__text">Qualification, prise de RDV, sens du résultat & communication claire.</p>
+          <!-- Petit bloc comme le template (inspiration) -->
+          <div class="inspire">
+            <p class="inspire__title">I get inspired by</p>
+            <p class="inspire__text">
+              des process simples, des dashboards lisibles, et des automatisations qui font gagner du temps.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">Services</h2>
-          <p class="section__subtitle">Des interventions orientées efficacité, qualité et performance.</p>
+    <!-- ABOUT (petit bloc texte + image comme le template) -->
+    <section id="about" class="about">
+      <div class="container about__grid">
+        <div class="about__media">
+          <!-- IMAGE PLACEHOLDER: une photo contexte / bureau / data / etc. -->
+          <img src="assets/about-placeholder.jpg" alt="Image à remplacer" loading="lazy">
         </div>
 
-        <div class="cards">
-          <article class="card">
-            <h3 class="card__title">Data & analyse de performance</h3>
-            <p class="card__text">Suivi KPI, lecture des résultats, recommandations actionnables.</p>
-            <ul class="list">
-              <li>Indicateurs & tableaux de bord</li>
-              <li>Analyse commerciale / opérationnelle</li>
-              <li>Amélioration continue</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Reporting & automatisation</h3>
-            <p class="card__text">Conception et industrialisation de reporting pour gagner du temps et fiabiliser.</p>
-            <ul class="list">
-              <li>Dashboards & supports de pilotage</li>
-              <li>Automatisation (Excel / outils métier)</li>
-              <li>Suivi d’incentives</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Emails HTML B2B</h3>
-            <p class="card__text">Conception, intégration et optimisation d’emails orientés performance.</p>
-            <ul class="list">
-              <li>Intégration HTML email</li>
-              <li>Optimisation & bonnes pratiques</li>
-              <li>Suivi KPI des communications</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Téléprospection & RDV</h3>
-            <p class="card__text">Qualification, prise de contact, génération d’opportunités commerciales.</p>
-            <ul class="list">
-              <li>Qualification & prise de rendez-vous</li>
-              <li>Aisance téléphonique</li>
-              <li>Sens du résultat</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">Expériences</h2>
-          <p class="section__subtitle">Synthèse des missions clés (Foundever / Orange DEF / EDF…).</p>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline__item">
-            <div class="timeline__left">
-              <p class="timeline__date">Depuis 2021</p>
-              <p class="timeline__place">Foundever — Mission : Orange DEF</p>
-            </div>
-            <div class="timeline__right">
-              <h3 class="timeline__title">Rédaction & intégration d’emails B2B</h3>
-              <ul class="list">
-                <li>Conception, intégration, optimisation d’emails B2B (HTML)</li>
-                <li>Pilotage de communications clients orientées performance</li>
-                <li>Suivi d’activité, KPI, amélioration continue des contenus</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__left">
-              <p class="timeline__date">2019 – 2021</p>
-              <p class="timeline__place">Data Factory</p>
-            </div>
-            <div class="timeline__right">
-              <h3 class="timeline__title">Reporting & automatisation</h3>
-              <ul class="list">
-                <li>Conception, automatisation, industrialisation de reporting</li>
-                <li>Création dashboards, support au pilotage opérationnel</li>
-                <li>Analyse performance commerciale, suivi des incentives</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__left">
-              <p class="timeline__date">2018 – 2020</p>
-              <p class="timeline__place">Administration recouvrement entreprises</p>
-            </div>
-            <div class="timeline__right">
-              <h3 class="timeline__title">Administration & reporting</h3>
-              <ul class="list">
-                <li>Administration des flux entreprises</li>
-                <li>Affectation aux agences de recouvrement</li>
-                <li>Gestion des droits utilisateurs, reporting périodique</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__left">
-              <p class="timeline__date">2017 – 2019</p>
-              <p class="timeline__place">Mission : Site interne</p>
-            </div>
-            <div class="timeline__right">
-              <h3 class="timeline__title">Planification & analyse de la performance</h3>
-              <ul class="list">
-                <li>Planification téléconseillers multi-activités (≈800 ETP)</li>
-                <li>Analyse production, KPI opérationnels</li>
-                <li>Reporting stratégique</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__left">
-              <p class="timeline__date">2017</p>
-              <p class="timeline__place">Mission : EDF Particulier</p>
-            </div>
-            <div class="timeline__right">
-              <h3 class="timeline__title">Conseiller client</h3>
-              <ul class="list">
-                <li>Relation client, vente par téléphone</li>
-                <li>Optimisation des règlements (digitalisation)</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPETENCES -->
-    <section id="competences" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">Compétences</h2>
-          <p class="section__subtitle">Techniques, professionnelles et relationnelles.</p>
-        </div>
-
-        <div class="skills">
-          <div class="skills__col">
-            <h3 class="skills__title">Compétences clés</h3>
-            <div class="chips">
-              <span class="chip">Téléprospection B2B</span>
-              <span class="chip">Qualification & RDV</span>
-              <span class="chip">Analyse KPI</span>
-              <span class="chip">Pilotage performance</span>
-              <span class="chip">Reporting automatisé</span>
-              <span class="chip">Dashboards</span>
-              <span class="chip">HTML email</span>
-              <span class="chip">Rédaction pro</span>
-              <span class="chip">Microsoft Office</span>
-            </div>
-          </div>
-
-          <div class="skills__col">
-            <h3 class="skills__title">Savoir-être</h3>
-            <ul class="list list--boxed">
-              <li>Autonomie & gestion de missions</li>
-              <li>Organisation, priorisation & respect des délais</li>
-              <li>Collaboration équipes projet & clients</li>
-              <li>Amélioration continue des processus & contenus</li>
-              <li>Communication claire, fiabilité, esprit de service</li>
-              <li>Sens du résultat & performance</li>
-            </ul>
-
-            <div class="lang">
-              <h3 class="skills__title">Langues</h3>
-              <p class="lang__text">Anglais : technique, écrit/lu, parler simple.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLACEHOLDER PORTFOLIO (images plus tard) -->
-    <section id="portfolio" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title">Réalisations</h2>
-          <p class="section__subtitle">
-            Ici on pourra ajouter des visuels (emails, dashboards, exemples de reporting).
+        <div class="about__content">
+          <p class="eyebrow">About</p>
+          <h2 class="h2">
+            Je conçois des reportings fiables, <span class="grad">automatisés</span>, et utiles au pilotage.
+          </h2>
+          <p class="p">
+            J’interviens sur la mise en place d’indicateurs, la construction de tableaux de bord, le suivi d’activité
+            et l’optimisation des communications (emails HTML). En parallèle, je peux aussi renforcer la partie commerciale
+            via de la téléprospection et de la prise de rendez-vous.
           </p>
+
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__k">+8 ans</span>
+              <span class="stat__v">expérience</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">Depuis 2021</span>
+              <span class="stat__v">emails B2B</span>
+            </div>
+            <div class="stat">
+              <span class="stat__k">KPI</span>
+              <span class="stat__v">pilotage</span>
+            </div>
+          </div>
+
+          <div class="about__chips">
+            <span class="chip">Dashboards</span>
+            <span class="chip">Automatisation</span>
+            <span class="chip">HTML Email</span>
+            <span class="chip">Prospection</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS (3 cartes comme le template) -->
+    <section class="process">
+      <div class="container">
+        <div class="sectionHead">
+          <p class="eyebrow">This is my process</p>
+          <h2 class="h2">Clair, rapide, orienté impact.</h2>
         </div>
 
-        <div class="projects">
-          <article class="project">
-            <div class="project__media">
-              <!-- PLACEHOLDER IMAGE: /assets/project-1.jpg -->
-              <img src="assets/project-placeholder-1.jpg" alt="Visuel projet 1 (à remplacer)" loading="lazy" />
+        <div class="process__grid">
+          <article class="step">
+            <div class="step__icon" aria-hidden="true">01</div>
+            <h3 class="step__title">Diagnostiquer</h3>
+            <p class="step__text">
+              Comprendre l’activité, définir les KPI, clarifier les usages (direction, ops, commerce).
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step__icon" aria-hidden="true">02</div>
+            <h3 class="step__title">Structurer & automatiser</h3>
+            <p class="step__text">
+              Mettre en place le reporting, automatiser les flux, sécuriser la qualité des données.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step__icon" aria-hidden="true">03</div>
+            <h3 class="step__title">Piloter & optimiser</h3>
+            <p class="step__text">
+              Faire vivre les dashboards, suivre la perf, itérer et améliorer en continu.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT PROJECTS (liste de cartes comme le template) -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="sectionHead sectionHead--row">
+          <div>
+            <p class="eyebrow">Recent projects</p>
+            <h2 class="h2">Quelques exemples de réalisations</h2>
+          </div>
+          <a class="btn btn--ghost" href="#contact">HIRE ME</a>
+        </div>
+
+        <div class="projects__grid">
+          <a class="projectCard" href="#" aria-label="Projet 1 (placeholder)">
+            <div class="projectCard__media">
+              <img src="assets/project-1-placeholder.jpg" alt="Projet 1 (à remplacer)" loading="lazy">
             </div>
-            <div class="project__content">
-              <h3 class="project__title">Exemple dashboard / reporting</h3>
-              <p class="project__text">Description courte (objectif, impact, outils).</p>
-              <div class="project__tags">
-                <span class="tag">KPI</span><span class="tag">Dashboard</span><span class="tag">Automatisation</span>
-              </div>
+            <div class="projectCard__body">
+              <p class="projectCard__title">Dashboard KPI — pilotage</p>
+              <p class="projectCard__meta">Data • Reporting • Performance</p>
+            </div>
+          </a>
+
+          <a class="projectCard" href="#" aria-label="Projet 2 (placeholder)">
+            <div class="projectCard__media">
+              <img src="assets/project-2-placeholder.jpg" alt="Projet 2 (à remplacer)" loading="lazy">
+            </div>
+            <div class="projectCard__body">
+              <p class="projectCard__title">Automatisation reporting</p>
+              <p class="projectCard__meta">Process • Fiabilité • Gain de temps</p>
+            </div>
+          </a>
+
+          <a class="projectCard" href="#" aria-label="Projet 3 (placeholder)">
+            <div class="projectCard__media">
+              <img src="assets/project-3-placeholder.jpg" alt="Projet 3 (à remplacer)" loading="lazy">
+            </div>
+            <div class="projectCard__body">
+              <p class="projectCard__title">Email HTML B2B — template</p>
+              <p class="projectCard__meta">Design • HTML Email • KPI</p>
+            </div>
+          </a>
+
+          <a class="projectCard" href="#" aria-label="Projet 4 (placeholder)">
+            <div class="projectCard__media">
+              <img src="assets/project-4-placeholder.jpg" alt="Projet 4 (à remplacer)" loading="lazy">
+            </div>
+            <div class="projectCard__body">
+              <p class="projectCard__title">Qualification & RDV</p>
+              <p class="projectCard__meta">Prospection • Script • Conversion</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG/INSIGHTS (bloc “from my blog”) -->
+    <section id="insights" class="insights">
+      <div class="container">
+        <div class="sectionHead sectionHead--row">
+          <div>
+            <p class="eyebrow">From my insights</p>
+            <h2 class="h2">Notes & bonnes pratiques</h2>
+          </div>
+          <a class="btn btn--ghost" href="#contact">ASK A QUESTION</a>
+        </div>
+
+        <div class="insights__grid">
+          <article class="insightCard">
+            <div class="insightCard__media">
+              <img src="assets/insight-1-placeholder.jpg" alt="Insight 1 (à remplacer)" loading="lazy">
+            </div>
+            <div class="insightCard__body">
+              <p class="insightCard__title">KPI : éviter les tableaux illisibles</p>
+              <p class="insightCard__text">Des règles simples pour rendre un reporting actionnable.</p>
+              <a class="textLink" href="#">Read more</a>
             </div>
           </article>
 
-          <article class="project">
-            <div class="project__media">
-              <!-- PLACEHOLDER IMAGE: /assets/project-2.jpg -->
-              <img src="assets/project-placeholder-2.jpg" alt="Visuel projet 2 (à remplacer)" loading="lazy" />
+          <article class="insightCard">
+            <div class="insightCard__media">
+              <img src="assets/insight-2-placeholder.jpg" alt="Insight 2 (à remplacer)" loading="lazy">
             </div>
-            <div class="project__content">
-              <h3 class="project__title">Email HTML B2B — template</h3>
-              <p class="project__text">Description courte (conception, intégration, performance).</p>
-              <div class="project__tags">
-                <span class="tag">HTML Email</span><span class="tag">B2B</span><span class="tag">Optimisation</span>
-              </div>
+            <div class="insightCard__body">
+              <p class="insightCard__title">Automatisation : gagner du temps sans casser la qualité</p>
+              <p class="insightCard__text">Structurer, tester, monitorer : la base d’un pipeline fiable.</p>
+              <a class="textLink" href="#">Read more</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
+    <!-- SERVICES (section simple, cohérente avec ton profil) -->
+    <section id="services" class="services">
       <div class="container">
-        <div class="cta">
-          <div class="cta__content">
-            <h2 class="cta__title">On travaille ensemble ?</h2>
+        <div class="sectionHead">
+          <p class="eyebrow">Services</p>
+          <h2 class="h2">Ce que je peux faire pour toi</h2>
+        </div>
+
+        <div class="services__grid">
+          <div class="service">
+            <h3 class="service__title">Data & performance</h3>
+            <p class="service__text">Analyse, KPI, recommandations, suivi d’activité.</p>
+          </div>
+          <div class="service">
+            <h3 class="service__title">Reporting automatisé</h3>
+            <p class="service__text">Dashboards, industrialisation, fiabilisation, gains de temps.</p>
+          </div>
+          <div class="service">
+            <h3 class="service__title">Emails HTML B2B</h3>
+            <p class="service__text">Templates, intégration, optimisation, suivi KPI.</p>
+          </div>
+          <div class="service">
+            <h3 class="service__title">Téléprospection & RDV</h3>
+            <p class="service__text">Qualification, scripts, prise de rendez-vous, performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG CTA (comme le template) -->
+    <section id="contact" class="cta">
+      <div class="container cta__wrap">
+        <p class="cta__kicker">IF YOU LIKE WHAT I DO, REACH OUT TO DISCUSS OUR NEXT PROJECT</p>
+
+        <div class="cta__grid">
+          <div class="cta__left">
+            <h2 class="cta__title">Hire me for your next project</h2>
             <p class="cta__text">
-              Dis-moi ton besoin (reporting, data, email HTML, prospection) et je reviens vers toi rapidement.
+              Décris ton besoin (reporting, KPI, email HTML, prospection) et je te réponds rapidement avec une proposition claire.
             </p>
 
-            <div class="cta__grid">
-              <a class="cta-card" href="mailto:m.hebert.aurelien.pro@gmail.com">
-                <p class="cta-card__k">Email</p>
-                <p class="cta-card__v">m.hebert.aurelien.pro@gmail.com</p>
-              </a>
-              <a class="cta-card" href="tel:+33659923323">
-                <p class="cta-card__k">Téléphone</p>
-                <p class="cta-card__v">06 59 92 33 23</p>
-              </a>
-              <div class="cta-card">
-                <p class="cta-card__k">Localisation</p>
-                <p class="cta-card__v">Rouen, France</p>
+            <div class="cta__actions">
+              <a class="btn btn--primary" href="mailto:m.hebert.aurelien.pro@gmail.com">GET IN TOUCH</a>
+              <a class="btn btn--ghost" href="tel:+33659923323">CALL</a>
+            </div>
+
+            <div class="cta__details">
+              <div class="detail">
+                <span class="detail__k">Email</span>
+                <span class="detail__v">m.hebert.aurelien.pro@gmail.com</span>
+              </div>
+              <div class="detail">
+                <span class="detail__k">Phone</span>
+                <span class="detail__v">06 59 92 33 23</span>
+              </div>
+              <div class="detail">
+                <span class="detail__k">Location</span>
+                <span class="detail__v">Rouen, France</span>
               </div>
             </div>
-
-            <p class="fineprint">
-              <!-- Option : ajouter un formulaire plus tard (Formspree / EmailJS) -->
-              Formulaire de contact possible sur demande (compatible GitHub Pages).
-            </p>
           </div>
 
-          <div class="cta__visual">
-            <div class="mock">
-              <p class="mock__title">Zone image / preuve sociale</p>
-              <p class="mock__text">Ici on pourra mettre : logos clients, captures dashboards, emails, avis, etc.</p>
-              <!-- PLACEHOLDER IMAGE -->
-              <img src="assets/contact-placeholder.jpg" alt="Image contact (à remplacer)" loading="lazy" />
+          <div class="cta__right">
+            <!-- IMAGE PLACEHOLDER: une capture dashboard/email/logo clients -->
+            <div class="ctaMedia">
+              <img src="assets/cta-placeholder.jpg" alt="Visuel contact (à remplacer)" loading="lazy">
             </div>
           </div>
         </div>
+
+        <footer class="footer">
+          <div class="footer__left">
+            <p class="footer__name">AURÉLIEN HEBERT</p>
+            <p class="footer__small">Consultant freelance — data & performance</p>
+          </div>
+          <div class="footer__right">
+            <a class="textLink" href="#">Instagram</a>
+            <span class="sep">/</span>
+            <a class="textLink" href="#">Facebook</a>
+            <span class="sep">/</span>
+            <a class="textLink" href="#">LinkedIn</a>
+            <span class="sep">/</span>
+            <a class="textLink" href="#">Twitter/X</a>
+          </div>
+        </footer>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <p class="footer__left">© <span id="y"></span> Aurélien Hébert</p>
-        <div class="footer__right">
-          <a class="link" href="#top">Haut de page</a>
-          <a class="link" href="#">LinkedIn</a>
-          <a class="link" href="#">GitHub</a>
-        </div>
-      </div>
-    </footer>
   </main>
 
   <script>
-    // année auto
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Menu overlay (simple, GitHub Pages friendly)
+    const menu = document.getElementById('menu');
+    const openBtn = document.querySelector('.menuBtn');
+    const closeBtn = document.querySelector('.menu__close');
+    const backdrop = document.querySelector('.menu__backdrop');
+    const links = document.querySelectorAll('.menu__link');
 
-    // animation simple au scroll
-    const els = document.querySelectorAll('.card, .timeline__item, .project, .cta, .portrait-card, .floating-card');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.15 });
-    els.forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    function openMenu(){
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      openBtn.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('no-scroll');
+    }
+    function closeMenu(){
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      openBtn.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('no-scroll');
+    }
+
+    openBtn.addEventListener('click', () => {
+      menu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+    links.forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
   </script>
 </body>
 </html>
