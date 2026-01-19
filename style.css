@@ -1,60 +1,51 @@
-/* Base */
-body {
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font-family: 'Inter', Arial, sans-serif;
-    overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Aurélien Hébert</title>
 
-/* Conteneur */
-.hero {
-    position: absolute;
-    bottom: 30%;
-    left: 0;
-    width: 100%;
-    padding: 60px 80px;
-    animation: moveTop 1.2s ease forwards;
-    animation-delay: 1.2s;
-}
+  <!-- Polices premium (titre + texte) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-/* TITRE */
-.anim-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 25px;
-    opacity: 0;
-    animation: fadeUp 0.9s ease forwards;
-}
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header qui va "monter" et se transformer en barre -->
+  <header class="topHeader" id="topHeader">
+    <div class="topHeader__inner">
+      <div class="brand">
+        <span class="brand__name">Aurélien Hébert</span>
+        <span class="brand__role">Consultant freelance</span>
+      </div>
 
-/* TEXTE */
-.anim-text {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    max-width: 900px;
-    color: #000;
-    opacity: 0;
-    animation: fadeUp 0.9s ease forwards;
-    animation-delay: 0.4s;
-}
+      <nav class="nav">
+        <a href="#projets">Projets</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-/* Anim apparition */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  <!-- Intro / Hero (arrive au centre, puis remonte et se "loge en haut") -->
+  <main class="stage" id="stage">
+    <section class="hero" aria-label="Introduction">
+      <h1 class="hero__title">
+        <span class="reveal reveal--1">Bienvenue sur mon portfolio</span>
+      </h1>
 
-/* Animation vers le haut */
-@keyframes moveTop {
-    to {
-        bottom: 70%;
-    }
-}
+      <p class="hero__text">
+        <span class="reveal reveal--2">
+          Je m’appelle <strong>Aurélien Hébert</strong>. J’accompagne les entreprises en
+          <strong>gestion</strong>, <strong>support</strong> et <strong>téléprospection</strong>,
+          avec une approche simple, efficace et orientée résultats.
+        </span>
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn" href="#projets">Voir mes projets</a>
+        <a class="btn btn--ghost" href="#contact">Me contacter</a>
+      </div>
+    </s
