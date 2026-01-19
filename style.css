@@ -70,15 +70,16 @@ body.is-scroll .topHeader{ transform: translateY(0); }
 
 /* L'image prend toute la largeur dispo, sans exploser en hauteur */
 .banner__img{
-  width: 100%;
-  max-width: 1100px;
-  height: 220px;           /* <-- contrôle la hauteur du bandeau */
-  object-fit: cover;       /* <-- recadre proprement sans déformer */
-  object-position: center; /* <-- centre le recadrage */
+  width: 100vw;             /* prend toute la largeur de la fenêtre */
+  max-width: none;          /* enlève la limite à 1100px */
+  height: 220px;            /* tu gardes la hauteur parfaite */
+  object-fit: cover;        /* garde le rendu propre */
+  object-position: center 35%; /* IMPORTANT : remonte l'image pour éviter de te couper */
   display: block;
-  margin: 0 auto;
-  border-radius: 12px;
+  margin: 0;                /* plus de centrage, on colle au viewport */
+  border-radius: 0;         /* si tu veux vraiment plein écran, sinon dis-moi */
 }
+
 
 /* ===== Hero ===== */
 .hero{
