@@ -265,3 +265,18 @@ body.is-docked .content{
   .btn{ width:100%; }
   .banner__img{ border-radius: 10px; }
 }
+
+
+.split-banner__center{
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.split-banner__portrait{
+  height: 210px;       /* reste dans le bandeau de 220px */
+  width: auto;
+  display: block;
+  transform: translateY(-4px); /* petit effet “élévation” sans dépasser */
+}
