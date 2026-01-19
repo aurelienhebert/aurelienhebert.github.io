@@ -1,3 +1,6 @@
+/* =====================
+   VARIABLES & BASE
+   ===================== */
 :root{
   --black:#0b0b0b;
   --gray:#2a2a2a;
@@ -8,18 +11,19 @@
 *{ box-sizing:border-box; }
 html, body{ height:100%; }
 
-/* Base */
 body{
   margin:0;
   background:#fff;
   color:var(--black);
   font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  overflow:hidden; /* bloqué pendant l'intro */
+  overflow:hidden;
 }
 
 body.is-scroll{ overflow:auto; }
 
-/* ===== Header ===== */
+/* =====================
+   HEADER
+   ===================== */
 .topHeader{
   position:fixed;
   top:0; left:0;
@@ -38,13 +42,13 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding: 18px var(--pad);
-  gap: 24px;
+  padding:18px var(--pad);
+  gap:24px;
 }
 
 .brand{ display:flex; flex-direction:column; line-height:1.1; }
 .brand__name{ font-weight:600; letter-spacing:-0.02em; }
-.brand__role{ font-size:.9rem; color: var(--gray); margin-top:4px; }
+.brand__role{ font-size:.9rem; color:var(--gray); margin-top:4px; }
 
 .nav{ display:flex; gap:18px; }
 .nav a{
@@ -55,107 +59,72 @@ body.is-scroll .topHeader{ transform: translateY(0); }
 }
 .nav a:hover{ opacity:1; }
 
-/* ===== Stage ===== */
+/* =====================
+   STAGE
+   ===================== */
 .stage{
   min-height:100vh;
   padding: 0 var(--pad);
-  padding-top: 90px; /* laisse la place au header quand il apparaîtra */
+  padding-top: 90px;
 }
 
-/* =========================
-   BANDEAU 2 PARTIES (G/D)
-   style vagues + halo blanc
-   ========================= */
+/* =====================
+   HERO BANNER (UNIQUE)
+   ===================== */
+.hero-banner{
+  width:100vw;
+  margin-left: calc(50% - 50vw);
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
 
-.split-banner{
-  width: 100vw;
-  margin-left: calc(50% - 50vw); /* pour prendre toute la largeur même dans un container */
-  height: 220px;
-  display: grid;
-  grid-template-columns: 1fr 220px 1fr; /* centre réservé à la photo ensuite */
-  align-items: stretch;
-  position: relative;
+  background:
+    radial-gradient(1200px 260px at 50% 20%, rgba(255,255,255,0.12), transparent 55%),
+    linear-gradient(135deg,
+      #052a45 0%,
+      #0b4f7f 35%,
+      #0aa0c6 70%,
+      #27d0d7 100%
+    );
 }
 
-/* Halo blanc / fondu vers le background */
-.split-banner::after{
+/* fondu vers fond blanc */
+.hero-banner::after{
   content:"";
   position:absolute;
-  inset:-1px; /* évite les lignes */
+  inset:0;
   pointer-events:none;
-  background:
-    radial-gradient(900px 220px at 50% 70%, rgba(255,255,255,0.9), rgba(255,255,255,0) 60%),
-    linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%);
-  mix-blend-mode: normal;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 60%,
+    rgba(255,255,255,1) 100%
+  );
 }
 
-/* Les 2 côtés */
-.split-banner__side{
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px; /* rendu premium */
+/* image centrale */
+.hero-banner__portrait{
+  height:200px;
+  width:auto;
+  position:relative;
+  z-index:2;
+  display:block;
+  transform: translateY(-6px);
+  filter: drop-shadow(0 18px 36px rgba(0,0,0,.28));
 }
 
-/* Centre vide (pour la future photo) */
-.split-banner__gap{
-  position: relative;
-}
-
-/* Fond “vagues” façon ton image */
-.split-banner__side::before{
-  content:"";
-  position:absolute;
-  inset:-40px;
-  background:
-    radial-gradient(900px 320px at 30% 20%, rgba(255,255,255,0.18), rgba(255,255,255,0) 55%),
-    radial-gradient(700px 260px at 80% 30%, rgba(255,255,255,0.14), rgba(255,255,255,0) 60%),
-    linear-gradient(135deg, #052a45 0%, #0b4f7f 35%, #0aa0c6 70%, #27d0d7 100%);
-  filter: saturate(1.05);
-}
-
-/* Vagues (superposition de courbes) */
-.split-banner__side::after{
-  content:"";
-  position:absolute;
-  inset:-20px;
-  background:
-    radial-gradient(1200px 220px at 20% 60%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%),
-    radial-gradient(1100px 220px at 50% 70%, rgba(255,255,255,0.14), rgba(255,255,255,0) 62%),
-    radial-gradient(1000px 220px at 80% 55%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%),
-    linear-gradient( to right, rgba(255,255,255,0.06), rgba(255,255,255,0) 45%, rgba(255,255,255,0.06) );
-  transform: rotate(-3deg);
-  opacity: .9;
-}
-
-/* Petit détail : liseré interne */
-.split-banner__side--left{
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.split-banner__side--right{
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-/* Responsive : centre un peu plus étroit sur mobile */
-@media (max-width: 900px){
-  .split-banner{
-    height: 200px;
-    grid-template-columns: 1fr 160px 1fr;
-  }
-}
-
-
-
-/* ===== Hero ===== */
+/* =====================
+   HERO TEXTE
+   ===================== */
 .hero{
   display:flex;
   flex-direction:column;
   gap:22px;
-  padding-top: 10px; /* rapproche du bandeau */
+  padding-top: 10px;
   transition: all .9s cubic-bezier(.2,.8,.2,1);
 }
-
 
 .hero__title{
   margin:0;
@@ -170,7 +139,7 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   margin:0;
   font-size: clamp(1.05rem, 1.5vw, 1.45rem);
   line-height:1.6;
-  max-width: 980px;
+  max-width:980px;
 }
 
 .hero__cta{
@@ -179,6 +148,9 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   margin-top:10px;
 }
 
+/* =====================
+   BOUTONS
+   ===================== */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -200,12 +172,14 @@ body.is-scroll .topHeader{ transform: translateY(0); }
   color:var(--black);
 }
 
-/* ===== Reveal (sécurisé) ===== */
+/* =====================
+   REVEAL
+   ===================== */
 .reveal{
   display:inline-block;
   opacity:1;
-  transform: translateY(0);
-  filter: blur(0);
+  transform:none;
+  filter:none;
 }
 
 .js .reveal{
@@ -223,20 +197,22 @@ body.is-playing .reveal--2{
 }
 
 @keyframes revealUp{
-  to{ opacity:1; transform: translateY(0); filter: blur(0); }
+  to{ opacity:1; transform:none; filter:none; }
 }
 
-/* ===== Dock (contenu) ===== */
+/* =====================
+   CONTENU
+   ===================== */
 .content{
   opacity:0;
   transform: translateY(18px);
   transition: all .9s cubic-bezier(.2,.8,.2,1);
-  padding-bottom: 80px;
+  padding-bottom:80px;
 }
 
 body.is-docked .content{
   opacity:1;
-  transform: translateY(0);
+  transform:none;
 }
 
 .block{
@@ -257,26 +233,23 @@ body.is-docked .content{
   color:var(--gray);
 }
 
-/* ===== Responsive ===== */
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 900px){
-  :root{ --pad: 22px; }
+  :root{ --pad:22px; }
   .nav{ display:none; }
-  .hero__cta{ flex-direction:column; align-items:flex-start; }
+
+  .hero-banner{ height:200px; }
+  .hero-banner__portrait{
+    height:170px;
+    transform: translateY(-4px);
+  }
+
+  .hero__cta{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
   .btn{ width:100%; }
-  .banner__img{ border-radius: 10px; }
-}
-
-
-.split-banner__center{
-  display: grid;
-  place-items: center;
-  position: relative;
-  z-index: 5;
-}
-
-.split-banner__portrait{
-  height: 210px;       /* reste dans le bandeau de 220px */
-  width: auto;
-  display: block;
-  transform: translateY(-4px); /* petit effet “élévation” sans dépasser */
 }
