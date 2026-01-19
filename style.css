@@ -139,61 +139,55 @@ body.is-playing .reveal--2{
   transition: all .9s cubic-bezier(.2,.8,.2,1);
   padding-bot
 
-  /* ===== BANDEAU ARTISTIQUE ===== */
+/* ===== BANDEAU ARTISTIQUE + PHOTO CERCLE ===== */
 
-.art-banner {
+.art-banner{
   position: relative;
   height: 300px;
-  background: linear-gradient(
-    135deg,
-    #0b2d5c 0%,
-    #1e5fa3 40%,
-    #4a76c2 100%
-  );
+  background: linear-gradient(135deg, #0b2d5c 0%, #1e5fa3 40%, #4a76c2 100%);
   overflow: visible;
 }
 
-/* Motif artistique subtil (effet premium) */
-.art-overlay {
+.art-overlay{
   position: absolute;
   inset: 0;
   background:
     repeating-linear-gradient(
       135deg,
-      rgba(255,255,255,0.05) 0,
-      rgba(255,255,255,0.05) 40px,
+      rgba(255,255,255,0.06) 0,
+      rgba(255,255,255,0.06) 40px,
       transparent 40px,
       transparent 80px
     );
   pointer-events: none;
 }
 
-/* Cercle photo */
-.photo-circle {
+/* Cercle blanc */
+.photo-circle{
   position: absolute;
   left: 50%;
-  bottom: -100px; /* DÉPASSEMENT */
+  bottom: -100px;          /* fait dépasser */
   transform: translateX(-50%);
   width: 220px;
   height: 220px;
-  background: white;
+  background: #fff;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  display: grid;
+  place-items: center;
   box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+  overflow: hidden;        /* IMPORTANT : coupe l’image dans le cercle */
 }
 
-/* Photo */
-.photo-circle img {
-  width: 92%;
+/* Image : empêcher "énorme" */
+.photo-circle img{
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
   border-radius: 50%;
   display: block;
 }
 
-/* Décalage du contenu suivant */
-.hero {
+/* Décale le bloc suivant pour ne pas être sous la photo */
+.hero{
   margin-top: 140px;
 }
-
