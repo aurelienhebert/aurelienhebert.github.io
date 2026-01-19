@@ -153,4 +153,63 @@ body.is-scroll{
   to{
     opacity:1;
     transform: translateY(0);
-    filter
+    filter: blur(0);
+  }
+}
+
+/* ===== Dock en haut (effet "loge en haut") ===== */
+/* Quand ça dock :
+   - le header apparaît en haut
+   - le hero devient une zone plus petite (comme une intro qui se range)
+   - le contenu apparaît
+*/
+body.is-scroll .topHeader{
+  transform: translateY(0);
+}
+
+/* On fait "remonter" le hero (se range) */
+.stage.is-docked .hero{
+  min-height: 55vh;
+  justify-content:flex-start;
+  padding-top: 120px; /* laisse la place au header */
+  transition: all .9s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Le contenu est caché au début */
+.content{
+  opacity:0;
+  transform: translateY(18px);
+  transition: all .9s cubic-bezier(.2,.8,.2,1);
+  padding-bottom: 80px;
+}
+
+/* Et apparaît après dock */
+.stage.is-docked .content{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Blocs de contenu */
+.block{
+  padding: 70px 0;
+  border-top: 1px solid var(--line);
+}
+.block h2{
+  margin:0 0 10px 0;
+  font-size: 1.6rem;
+  letter-spacing:-0.02em;
+}
+.block p{
+  margin:0;
+  max-width: 900px;
+  line-height:1.7;
+  color: var(--gray);
+}
+
+/* ===== Responsive simple ===== */
+@media (max-width: 900px){
+  :root{ --pad: 22px; }
+  .nav{ display:none; } /* on simplifie sur mobile */
+  .hero__cta{ flex-direction:column; align-items:flex-start; }
+  .btn{ width: 100%; }
+}
