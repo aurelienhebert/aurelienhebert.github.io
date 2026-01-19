@@ -141,4 +141,48 @@ body.is-playing .reveal--2{
 
 
 
-.art-banner { background: blue !important; height: 300px !important; }
+.art-banner{
+  position: relative;
+  height: 300px;
+  background: linear-gradient(135deg, #0b2d5c 0%, #1e5fa3 40%, #4a76c2 100%) !important;
+  overflow: visible;
+}
+
+.art-overlay{
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,0.06) 0,
+    rgba(255,255,255,0.06) 40px,
+    transparent 40px,
+    transparent 80px
+  );
+  pointer-events: none;
+}
+
+.photo-circle{
+  position: absolute;
+  left: 50%;
+  bottom: -100px;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  background: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.photo-circle img{
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.hero{ margin-top: 140px; }
+
