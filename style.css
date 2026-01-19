@@ -1,52 +1,60 @@
-/* Reset simple */
+/* Base */
 body {
     margin: 0;
     padding: 0;
     background: #ffffff;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
+    overflow: hidden;
 }
 
-/* Bandeau */
+/* Conteneur */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px;
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    width: 100%;
+    padding: 60px 80px;
+    animation: moveTop 1.2s ease forwards;
+    animation-delay: 1.2s;
 }
 
-/* Titre */
+/* TITRE */
 .anim-title {
-    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
     font-weight: 600;
     color: #000;
-    margin-bottom: 30px;
-}
-
-/* Texte */
-.anim-text {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    color: #000;
-    max-width: 900px;
-}
-
-/* Animation */
-.anim {
+    margin-bottom: 25px;
     opacity: 0;
-    transform: translateY(30px);
     animation: fadeUp 0.9s ease forwards;
 }
 
-/* Décalage entre les deux textes */
+/* TEXTE */
 .anim-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    max-width: 900px;
+    color: #000;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
     animation-delay: 0.4s;
 }
 
-/* Keyframes */
+/* Anim apparition */
 @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Animation vers le haut */
+@keyframes moveTop {
+    to {
+        bottom: 70%;
     }
 }
