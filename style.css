@@ -64,29 +64,31 @@ body.is-scroll .topHeader{ transform: translateY(0); }
 
 /* ===== Bandeau image ===== */
 .banner{
-  margin-top: 10px;
+  margin-top: 0;
+  margin-bottom: 14px;  /* <-- rapproche "Bienvenue" du bandeau */
 }
 
 /* L'image prend toute la largeur dispo, sans exploser en hauteur */
 .banner__img{
   width: 100%;
-  max-width: 1100px;      /* évite l'effet “trop grand” sur très grands écrans */
-  height: auto;
+  max-width: 1100px;
+  height: 220px;           /* <-- contrôle la hauteur du bandeau */
+  object-fit: cover;       /* <-- recadre proprement sans déformer */
+  object-position: center; /* <-- centre le recadrage */
   display: block;
-  margin: 0 auto;         /* centre l'image */
-  border-radius: 12px;    /* optionnel : donne un rendu premium */
+  margin: 0 auto;
+  border-radius: 12px;
 }
 
 /* ===== Hero ===== */
 .hero{
-  min-height: calc(100vh - 260px);
   display:flex;
   flex-direction:column;
-  justify-content:center;
   gap:22px;
-  padding-top: 30px;
+  padding-top: 10px; /* rapproche du bandeau */
   transition: all .9s cubic-bezier(.2,.8,.2,1);
 }
+
 
 .hero__title{
   margin:0;
