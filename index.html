@@ -1,106 +1,438 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Aurélien Hébert</title>
+  <meta name="description" content="Aurélien Hébert — Consultant freelance en data, reporting automatisé, emails HTML B2B & téléprospection." />
+  <title>Aurélien Hébert — Consultant freelance</title>
 
-  <!-- Active la classe .js AVANT le CSS -->
-  <script>document.documentElement.classList.add('js');</script>
-
-  <!-- Polices -->
-  <link rel="preconnect"  href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Background decoration -->
+  <div class="bg-blur bg-blur--a"></div>
+  <div class="bg-blur bg-blur--b"></div>
 
-  <!-- HEADER -->
-  <header class="topHeader">
-    <div class="topHeader__inner">
-      <div class="brand">
-        <span class="brand__name">Aurélien Hébert</span>
-        <span class="brand__role">Consultant freelance</span>
-      </div>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Retour en haut">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Aurélien Hébert</span>
+      </a>
 
-      <nav class="nav">
-        <a href="#projets">Projets</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#experience">Expériences</a>
+        <a class="nav__link" href="#competences">Compétences</a>
+        <a class="nav__link" href="#contact">Contact</a>
       </nav>
+
+      <a class="btn btn--primary header__cta" href="#contact">Me contacter</a>
     </div>
   </header>
 
-  <!-- CONTENU PRINCIPAL -->
-  <main class="stage">
-
-  <section class="hero-banner">
-  <img
-    src="images/aurelien_halo_cutout.png"
-    alt="Aurélien Hébert"
-    class="hero-banner__portrait"
-  >
-</section>
-
-
-
-
+  <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <h1 class="hero__title">
-        <span class="reveal reveal--1">Bienvenue sur mon portfolio</span>
-      </h1>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="pill">
+            <span class="pill__dot" aria-hidden="true"></span>
+            Consultant freelance
+          </p>
 
-      <p class="hero__text">
-        <span class="reveal reveal--2">
-          Je m’appelle <strong>Aurélien Hébert</strong>. J’accompagne les entreprises en
-          <strong>gestion</strong>, <strong>support</strong> et <strong>téléprospection</strong>,
-          avec une approche simple, efficace et orientée résultats.
-        </span>
-      </p>
+          <h1 class="hero__title">
+            Data, reporting automatisé<br />
+            <span class="gradient"> & téléprospection</span>
+          </h1>
 
-      <div class="hero__cta">
-        <a class="btn" href="#projets">Voir mes projets</a>
-        <a class="btn btn--ghost" href="#contact">Me contacter</a>
+          <p class="hero__subtitle">
+            J’accompagne les entreprises dans l’analyse de leurs données, l’optimisation de leurs reportings
+            et la création d’emails professionnels en HTML. À l’aise au téléphone, j’interviens aussi en
+            téléprospection pour générer des opportunités commerciales.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Demander un devis</a>
+            <a class="btn btn--ghost" href="#services">Voir mes services</a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="meta">
+              <span class="meta__label">📍 Localisation</span>
+              <span class="meta__value">Rouen, France</span>
+            </div>
+            <div class="meta">
+              <span class="meta__label">📞 Téléphone</span>
+              <a class="meta__value link" href="tel:+33659923323">06 59 92 33 23</a>
+            </div>
+            <div class="meta">
+              <span class="meta__label">✉️ Email</span>
+              <a class="meta__value link" href="mailto:m.hebert.aurelien.pro@gmail.com">m.hebert.aurelien.pro@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="hero__badges" aria-label="Points forts">
+            <span class="badge">KPI & pilotage</span>
+            <span class="badge">Dashboards & reporting</span>
+            <span class="badge">Emails HTML B2B</span>
+            <span class="badge">Prospection & RDV</span>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="portrait-card">
+            <!-- PLACEHOLDER IMAGE: ajoute une image /assets/aurelien.jpg plus tard -->
+            <div class="portrait">
+              <img
+                src="assets/portrait-placeholder.jpg"
+                alt="Portrait d'Aurélien Hébert (à remplacer)"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="portrait-card__content">
+              <p class="portrait-card__name">Aurélien Hébert</p>
+              <p class="portrait-card__role">Consultant freelance</p>
+
+              <div class="portrait-card__stats">
+                <div class="stat">
+                  <span class="stat__k">+8 ans</span>
+                  <span class="stat__v">Expérience</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__k">Depuis 2021</span>
+                  <span class="stat__v">Emails B2B</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__k">Data</span>
+                  <span class="stat__v">Automatisation</span>
+                </div>
+              </div>
+
+              <div class="portrait-card__links">
+                <!-- Remplace # par tes liens -->
+                <a class="icon-link" href="#" aria-label="LinkedIn">
+                  <span aria-hidden="true">in</span>
+                </a>
+                <a class="icon-link" href="#" aria-label="GitHub">
+                  <span aria-hidden="true">GH</span>
+                </a>
+                <a class="icon-link" href="#" aria-label="Télécharger le CV (PDF)">
+                  <span aria-hidden="true">CV</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card--1">
+            <p class="floating-card__title">Reporting & automatisation</p>
+            <p class="floating-card__text">Industrialisation, dashboards, suivi d’incentives, pilotage opérationnel.</p>
+          </div>
+
+          <div class="floating-card floating-card--2">
+            <p class="floating-card__title">Téléprospection B2B</p>
+            <p class="floating-card__text">Qualification, prise de RDV, sens du résultat & communication claire.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SECTIONS -->
-    <section class="content">
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Services</h2>
+          <p class="section__subtitle">Des interventions orientées efficacité, qualité et performance.</p>
+        </div>
 
-      <section class="block" id="projets">
-        <h2>Projets</h2>
-        <p>Présente ici quelques projets ou réalisations.</p>
-      </section>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Data & analyse de performance</h3>
+            <p class="card__text">Suivi KPI, lecture des résultats, recommandations actionnables.</p>
+            <ul class="list">
+              <li>Indicateurs & tableaux de bord</li>
+              <li>Analyse commerciale / opérationnelle</li>
+              <li>Amélioration continue</li>
+            </ul>
+          </article>
 
-      <section class="block" id="services">
-        <h2>Services</h2>
-        <p>Gestion, support et téléprospection — explique ce que tu apportes concrètement.</p>
-      </section>
+          <article class="card">
+            <h3 class="card__title">Reporting & automatisation</h3>
+            <p class="card__text">Conception et industrialisation de reporting pour gagner du temps et fiabiliser.</p>
+            <ul class="list">
+              <li>Dashboards & supports de pilotage</li>
+              <li>Automatisation (Excel / outils métier)</li>
+              <li>Suivi d’incentives</li>
+            </ul>
+          </article>
 
-      <section class="block" id="contact">
-        <h2>Contact</h2>
-        <p>Email, LinkedIn, formulaire…</p>
-      </section>
+          <article class="card">
+            <h3 class="card__title">Emails HTML B2B</h3>
+            <p class="card__text">Conception, intégration et optimisation d’emails orientés performance.</p>
+            <ul class="list">
+              <li>Intégration HTML email</li>
+              <li>Optimisation & bonnes pratiques</li>
+              <li>Suivi KPI des communications</li>
+            </ul>
+          </article>
 
+          <article class="card">
+            <h3 class="card__title">Téléprospection & RDV</h3>
+            <p class="card__text">Qualification, prise de contact, génération d’opportunités commerciales.</p>
+            <ul class="list">
+              <li>Qualification & prise de rendez-vous</li>
+              <li>Aisance téléphonique</li>
+              <li>Sens du résultat</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Expériences</h2>
+          <p class="section__subtitle">Synthèse des missions clés (Foundever / Orange DEF / EDF…).</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline__item">
+            <div class="timeline__left">
+              <p class="timeline__date">Depuis 2021</p>
+              <p class="timeline__place">Foundever — Mission : Orange DEF</p>
+            </div>
+            <div class="timeline__right">
+              <h3 class="timeline__title">Rédaction & intégration d’emails B2B</h3>
+              <ul class="list">
+                <li>Conception, intégration, optimisation d’emails B2B (HTML)</li>
+                <li>Pilotage de communications clients orientées performance</li>
+                <li>Suivi d’activité, KPI, amélioration continue des contenus</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__left">
+              <p class="timeline__date">2019 – 2021</p>
+              <p class="timeline__place">Data Factory</p>
+            </div>
+            <div class="timeline__right">
+              <h3 class="timeline__title">Reporting & automatisation</h3>
+              <ul class="list">
+                <li>Conception, automatisation, industrialisation de reporting</li>
+                <li>Création dashboards, support au pilotage opérationnel</li>
+                <li>Analyse performance commerciale, suivi des incentives</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__left">
+              <p class="timeline__date">2018 – 2020</p>
+              <p class="timeline__place">Administration recouvrement entreprises</p>
+            </div>
+            <div class="timeline__right">
+              <h3 class="timeline__title">Administration & reporting</h3>
+              <ul class="list">
+                <li>Administration des flux entreprises</li>
+                <li>Affectation aux agences de recouvrement</li>
+                <li>Gestion des droits utilisateurs, reporting périodique</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__left">
+              <p class="timeline__date">2017 – 2019</p>
+              <p class="timeline__place">Mission : Site interne</p>
+            </div>
+            <div class="timeline__right">
+              <h3 class="timeline__title">Planification & analyse de la performance</h3>
+              <ul class="list">
+                <li>Planification téléconseillers multi-activités (≈800 ETP)</li>
+                <li>Analyse production, KPI opérationnels</li>
+                <li>Reporting stratégique</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__left">
+              <p class="timeline__date">2017</p>
+              <p class="timeline__place">Mission : EDF Particulier</p>
+            </div>
+            <div class="timeline__right">
+              <h3 class="timeline__title">Conseiller client</h3>
+              <ul class="list">
+                <li>Relation client, vente par téléphone</li>
+                <li>Optimisation des règlements (digitalisation)</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="competences" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Compétences</h2>
+          <p class="section__subtitle">Techniques, professionnelles et relationnelles.</p>
+        </div>
+
+        <div class="skills">
+          <div class="skills__col">
+            <h3 class="skills__title">Compétences clés</h3>
+            <div class="chips">
+              <span class="chip">Téléprospection B2B</span>
+              <span class="chip">Qualification & RDV</span>
+              <span class="chip">Analyse KPI</span>
+              <span class="chip">Pilotage performance</span>
+              <span class="chip">Reporting automatisé</span>
+              <span class="chip">Dashboards</span>
+              <span class="chip">HTML email</span>
+              <span class="chip">Rédaction pro</span>
+              <span class="chip">Microsoft Office</span>
+            </div>
+          </div>
+
+          <div class="skills__col">
+            <h3 class="skills__title">Savoir-être</h3>
+            <ul class="list list--boxed">
+              <li>Autonomie & gestion de missions</li>
+              <li>Organisation, priorisation & respect des délais</li>
+              <li>Collaboration équipes projet & clients</li>
+              <li>Amélioration continue des processus & contenus</li>
+              <li>Communication claire, fiabilité, esprit de service</li>
+              <li>Sens du résultat & performance</li>
+            </ul>
+
+            <div class="lang">
+              <h3 class="skills__title">Langues</h3>
+              <p class="lang__text">Anglais : technique, écrit/lu, parler simple.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLACEHOLDER PORTFOLIO (images plus tard) -->
+    <section id="portfolio" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Réalisations</h2>
+          <p class="section__subtitle">
+            Ici on pourra ajouter des visuels (emails, dashboards, exemples de reporting).
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div class="project__media">
+              <!-- PLACEHOLDER IMAGE: /assets/project-1.jpg -->
+              <img src="assets/project-placeholder-1.jpg" alt="Visuel projet 1 (à remplacer)" loading="lazy" />
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">Exemple dashboard / reporting</h3>
+              <p class="project__text">Description courte (objectif, impact, outils).</p>
+              <div class="project__tags">
+                <span class="tag">KPI</span><span class="tag">Dashboard</span><span class="tag">Automatisation</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__media">
+              <!-- PLACEHOLDER IMAGE: /assets/project-2.jpg -->
+              <img src="assets/project-placeholder-2.jpg" alt="Visuel projet 2 (à remplacer)" loading="lazy" />
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">Email HTML B2B — template</h3>
+              <p class="project__text">Description courte (conception, intégration, performance).</p>
+              <div class="project__tags">
+                <span class="tag">HTML Email</span><span class="tag">B2B</span><span class="tag">Optimisation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__content">
+            <h2 class="cta__title">On travaille ensemble ?</h2>
+            <p class="cta__text">
+              Dis-moi ton besoin (reporting, data, email HTML, prospection) et je reviens vers toi rapidement.
+            </p>
+
+            <div class="cta__grid">
+              <a class="cta-card" href="mailto:m.hebert.aurelien.pro@gmail.com">
+                <p class="cta-card__k">Email</p>
+                <p class="cta-card__v">m.hebert.aurelien.pro@gmail.com</p>
+              </a>
+              <a class="cta-card" href="tel:+33659923323">
+                <p class="cta-card__k">Téléphone</p>
+                <p class="cta-card__v">06 59 92 33 23</p>
+              </a>
+              <div class="cta-card">
+                <p class="cta-card__k">Localisation</p>
+                <p class="cta-card__v">Rouen, France</p>
+              </div>
+            </div>
+
+            <p class="fineprint">
+              <!-- Option : ajouter un formulaire plus tard (Formspree / EmailJS) -->
+              Formulaire de contact possible sur demande (compatible GitHub Pages).
+            </p>
+          </div>
+
+          <div class="cta__visual">
+            <div class="mock">
+              <p class="mock__title">Zone image / preuve sociale</p>
+              <p class="mock__text">Ici on pourra mettre : logos clients, captures dashboards, emails, avis, etc.</p>
+              <!-- PLACEHOLDER IMAGE -->
+              <img src="assets/contact-placeholder.jpg" alt="Image contact (à remplacer)" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__left">© <span id="y"></span> Aurélien Hébert</p>
+        <div class="footer__right">
+          <a class="link" href="#top">Haut de page</a>
+          <a class="link" href="#">LinkedIn</a>
+          <a class="link" href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <!-- SCRIPT ANIMATION -->
   <script>
-    window.addEventListener("load", () => {
-      document.body.classList.add("is-playing");
+    // année auto
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-      setTimeout(() => {
-        document.body.classList.add("is-docked");
-        document.body.classList.add("is-scroll");
-      }, 2000);
-    });
+    // animation simple au scroll
+    const els = document.querySelectorAll('.card, .timeline__item, .project, .cta, .portrait-card, .floating-card');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.15 });
+    els.forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
-
 </body>
 </html>
