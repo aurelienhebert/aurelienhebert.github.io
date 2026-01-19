@@ -7,30 +7,34 @@
 
 *{ box-sizing:border-box; }
 html, body{ height:100%; }
+
 body{
   margin:0;
   background:#fff;
   color:var(--black);
   font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  overflow:hidden; /* on bloque le scroll pendant l'intro */
+  overflow:hidden; /* bloque le scroll pendant l’intro */
 }
 
 body.is-scroll{
-  overflow:auto; /* on remet le scroll après l'intro */
+  overflow:auto; /* remet le scroll après l’intro */
 }
 
-/* ===== Header (barre du haut) ===== */
+/* ===== Header ===== */
 .topHeader{
   position:fixed;
-  top:0;
-  left:0;
+  top:0; left:0;
   width:100%;
   z-index:10;
-  transform: translateY(-110%); /* caché au début */
+  transform: translateY(-110%);
   background:rgba(255,255,255,.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   transition: transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+body.is-scroll .topHeader{
+  transform: translateY(0);
 }
 
 .topHeader__inner{
@@ -41,175 +45,4 @@ body.is-scroll{
   gap: 24px;
 }
 
-.brand{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
-.brand__name{
-  font-weight:600;
-  letter-spacing:-0.02em;
-}
-.brand__role{
-  font-size:.9rem;
-  color: var(--gray);
-  margin-top:4px;
-}
-
-.nav{
-  display:flex;
-  gap: 18px;
-}
-.nav a{
-  text-decoration:none;
-  color: var(--black);
-  font-weight:500;
-  opacity:.85;
-  transition: opacity .2s ease;
-}
-.nav a:hover{ opacity:1; }
-
-/* ===== Stage (zone intro + contenu) ===== */
-.stage{
-  min-height:100vh;
-  padding: 0 var(--pad);
-  display:flex;
-  flex-direction:column;
-}
-
-/* Intro centrée */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap: 22px;
-  padding-top: 60px;
-}
-
-/* Typo "ça saute aux yeux" */
-.hero__title{
-  margin:0;
-  font-family:"Playfair Display", serif;
-  font-weight:700;
-  letter-spacing:-0.02em;
-  font-size: clamp(2.6rem, 5vw, 4.6rem);
-  line-height: 1.05;
-}
-
-.hero__text{
-  margin:0;
-  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
-  line-height:1.6;
-  max-width: 980px;
-  color: var(--black);
-}
-
-.hero__cta{
-  display:flex;
-  gap: 14px;
-  margin-top: 10px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 48px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid var(--black);
-  color: #fff;
-  background: var(--black);
-  text-decoration:none;
-  font-weight:600;
-  transition: transform .2s ease, opacity .2s ease;
-}
-.btn:hover{ transform: translateY(-2px); }
-
-.btn--ghost{
-  background: transparent;
-  color: var(--black);
-}
-.btn--ghost:hover{ opacity:.85; }
-
-/* ===== Animations "en 2 temps" ===== */
-.reveal{
-  display:inline-block;
-  opacity:0;
-  transform: translateY(28px);
-  filter: blur(2px);
-}
-
-.stage.is-playing .reveal--1{
-  animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
-}
-.stage.is-playing .reveal--2{
-  animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
-  animation-delay: .35s; /* décalage entre phrase 1 et paragraphe */
-}
-
-@keyframes revealUp{
-  to{
-    opacity:1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-/* ===== Dock en haut (effet "loge en haut") ===== */
-/* Quand ça dock :
-   - le header apparaît en haut
-   - le hero devient une zone plus petite (comme une intro qui se range)
-   - le contenu apparaît
-*/
-body.is-scroll .topHeader{
-  transform: translateY(0);
-}
-
-/* On fait "remonter" le hero (se range) */
-.stage.is-docked .hero{
-  min-height: 55vh;
-  justify-content:flex-start;
-  padding-top: 120px; /* laisse la place au header */
-  transition: all .9s cubic-bezier(.2,.8,.2,1);
-}
-
-/* Le contenu est caché au début */
-.content{
-  opacity:0;
-  transform: translateY(18px);
-  transition: all .9s cubic-bezier(.2,.8,.2,1);
-  padding-bottom: 80px;
-}
-
-/* Et apparaît après dock */
-.stage.is-docked .content{
-  opacity:1;
-  transform: translateY(0);
-}
-
-/* Blocs de contenu */
-.block{
-  padding: 70px 0;
-  border-top: 1px solid var(--line);
-}
-.block h2{
-  margin:0 0 10px 0;
-  font-size: 1.6rem;
-  letter-spacing:-0.02em;
-}
-.block p{
-  margin:0;
-  max-width: 900px;
-  line-height:1.7;
-  color: var(--gray);
-}
-
-/* ===== Responsive simple ===== */
-@media (max-width: 900px){
-  :root{ --pad: 22px; }
-  .nav{ display:none; } /* on simplifie sur mobile */
-  .hero__cta{ flex-direction:column; align-items:flex-start; }
-  .btn{ width: 100%; }
-}
+.brand{ display:flex; fl
