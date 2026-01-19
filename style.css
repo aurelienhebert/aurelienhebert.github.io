@@ -1,5 +1,3 @@
-body { background: red !important; }
-
 :root{
   --black:#0b0b0b;
   --gray:#2a2a2a;
@@ -7,30 +5,23 @@ body { background: red !important; }
   --pad: 80px;
 }
 
-/* Reset */
 *{ box-sizing:border-box; }
 html, body{ height:100%; }
 
-/* Base */
 body{
   margin:0;
   background:#fff;
   color:var(--black);
   font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  overflow:hidden; /* bloque le scroll pendant l’intro */
+  overflow:hidden;
 }
 
-/* Scroll réactivé après animation */
-body.is-scroll{
-  overflow:auto;
-}
+body.is-scroll{ overflow:auto; }
 
-/* ================= HEADER ================= */
-
+/* Header */
 .topHeader{
   position:fixed;
-  top:0;
-  left:0;
+  top:0; left:0;
   width:100%;
   z-index:10;
   transform: translateY(-110%);
@@ -39,10 +30,7 @@ body.is-scroll{
   border-bottom: 1px solid var(--line);
   transition: transform .9s cubic-bezier(.2,.8,.2,1);
 }
-
-body.is-scroll .topHeader{
-  transform: translateY(0);
-}
+body.is-scroll .topHeader{ transform: translateY(0); }
 
 .topHeader__inner{
   display:flex;
@@ -52,47 +40,26 @@ body.is-scroll .topHeader{
   gap: 24px;
 }
 
-.brand{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
+.brand{ display:flex; flex-direction:column; line-height:1.1; }
+.brand__name{ font-weight:600; letter-spacing:-0.02em; }
+.brand__role{ font-size:.9rem; color: var(--gray); margin-top:4px; }
 
-.brand__name{
-  font-weight:600;
-  letter-spacing:-0.02em;
-}
-
-.brand__role{
-  font-size:.9rem;
-  color: var(--gray);
-  margin-top:4px;
-}
-
-.nav{
-  display:flex;
-  gap:18px;
-}
-
+.nav{ display:flex; gap:18px; }
 .nav a{
   text-decoration:none;
   color:var(--black);
   font-weight:500;
   opacity:.85;
 }
+.nav a:hover{ opacity:1; }
 
-.nav a:hover{
-  opacity:1;
-}
-
-/* ================= STAGE ================= */
-
+/* Stage */
 .stage{
   min-height:100vh;
   padding: 0 var(--pad);
 }
 
-/* Intro */
+/* Hero */
 .hero{
   min-height:100vh;
   display:flex;
@@ -103,7 +70,6 @@ body.is-scroll .topHeader{
   transition: all .9s cubic-bezier(.2,.8,.2,1);
 }
 
-/* Typo impactante */
 .hero__title{
   margin:0;
   font-family:"Playfair Display", serif;
@@ -120,12 +86,7 @@ body.is-scroll .topHeader{
   max-width:980px;
 }
 
-/* Boutons */
-.hero__cta{
-  display:flex;
-  gap:14px;
-  margin-top:10px;
-}
+.hero__cta{ display:flex; gap:14px; margin-top:10px; }
 
 .btn{
   display:inline-flex;
@@ -141,58 +102,39 @@ body.is-scroll .topHeader{
   font-weight:600;
   transition: transform .2s ease, opacity .2s ease;
 }
-
-.btn:hover{
-  transform: translateY(-2px);
-}
+.btn:hover{ transform: translateY(-2px); }
 
 .btn--ghost{
   background:transparent;
   color:var(--black);
 }
 
-/* ================= ANIMATIONS ================= */
-
-/* ÉTAT SANS JS → TEXTE VISIBLE (ANTI PAGE BLANCHE) */
+/* Reveal (anti page blanche sans JS) */
 .reveal{
   display:inline-block;
   opacity:1;
   transform: translateY(0);
   filter: blur(0);
 }
-
-/* ÉTAT AVEC JS → PRÉPARATION ANIMATION */
 .js .reveal{
   opacity:0;
   transform: translateY(28px);
   filter: blur(2px);
 }
-
-/* Lancement animation */
 body.is-playing .reveal--1{
   animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
 }
-
 body.is-playing .reveal--2{
   animation: revealUp .85s cubic-bezier(.2,.8,.2,1) forwards;
   animation-delay:.35s;
 }
-
 @keyframes revealUp{
-  to{
-    opacity:1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+  to{ opacity:1; transform: translateY(0); filter: blur(0); }
 }
 
-/* ================= DOCK EN HAUT ================= */
-
+/* Dock */
 .content{
   opacity:0;
   transform: translateY(18px);
   transition: all .9s cubic-bezier(.2,.8,.2,1);
-  padding-bottom:80px;
-}
-
-body.
+  padding-bot
