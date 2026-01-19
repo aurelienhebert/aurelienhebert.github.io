@@ -141,48 +141,28 @@ body.is-playing .reveal--2{
 
 
 
+/* ===== BANDEAU TURQUOISE (GRAPHIC & CLASSY) ===== */
+
 .art-banner{
   position: relative;
-  height: 300px;
-  background: linear-gradient(135deg, #0b2d5c 0%, #1e5fa3 40%, #4a76c2 100%) !important;
+  height: 190px;                 /* bandeau moins haut */
+  border-radius: 0;              /* si tu veux des coins arrondis, dis-moi */
+  background: linear-gradient(135deg, #0d6f7a 0%, #0fa3a9 45%, #17c0c8 100%);
   overflow: visible;
 }
 
+/* Effet graphique (lignes + lumière) */
 .art-overlay{
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(255,255,255,0.06) 0,
-    rgba(255,255,255,0.06) 40px,
-    transparent 40px,
-    transparent 80px
-  );
   pointer-events: none;
-}
+  background:
+    radial-gradient(900px 220px at 20% 35%, rgba(255,255,255,0.28), transparent 60%),
+    radial-gradient(700px 200px at 80% 20%, rgba(255,255,255,0.18), transparent 60%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.10) 0,
+      rgba(255,255,255,0.10) 18px,
+      rgba(255,255,255,0.00) 18p
 
-.photo-circle{
-  position: absolute;
-  left: 50%;
-  bottom: -100px;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 220px;
-  background: #fff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
-  overflow: hidden;
-}
-
-.photo-circle img{
-  width: 85%;
-  height: 85%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
-
-.hero{ margin-top: 140px; }
 
