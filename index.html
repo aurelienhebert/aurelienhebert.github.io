@@ -3,365 +3,170 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Page wow — hero cinématique teal/purple." />
-  <title>WOW Landing — Teal/Purple</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Aurélien HEBERT — Freelance en reporting, analyse de données et intégration d’emails HTML." />
+  <title>Aurélien HEBERT | Freelance Data, Reporting & Emails HTML</title>
 </head>
 
 <body>
-  <!-- Background layer -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__grain"></div>
-    <div class="bg__blob bg__blob--a"></div>
-    <div class="bg__blob bg__blob--b"></div>
-    <div class="bg__grid"></div>
-  </div>
-
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="Retour en haut">
-        <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__txt">STUDIO</span>
-      </a>
-
-      <nav class="nav" aria-label="Navigation">
-        <a class="nav__link" href="#work">Work</a>
-        <a class="nav__link" href="#process">Process</a>
-        <a class="nav__link" href="#contact">Contact</a>
-      </nav>
-
-      <button class="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
-        <span class="menuBtn__txt">MENU</span>
-        <span class="menuBtn__ic" aria-hidden="true"></span>
-      </button>
+  <!-- Barre fixe (structure, style à venir en CSS) -->
+  <header>
+    <div>
+      <strong>Aurélien HEBERT</strong> — Freelance
     </div>
+
+    <nav aria-label="Navigation principale">
+      <a href="#apropos">À propos</a> |
+      <a href="#expertises">Expertises</a> |
+      <a href="#experiences">Expériences</a> |
+      <a href="#competences">Compétences</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- CTA fixé en haut (sera sticky via CSS ensuite) -->
+    <div>
+      <a href="mailto:m.hebert.aurelien.pro@gmail.com?subject=Contact%20-%20Mission%20Freelance">
+        Me contacter (Email)
+      </a>
+    </div>
+
+    <hr />
   </header>
 
-  <!-- Menu overlay -->
-  <aside id="menu" class="menu" aria-hidden="true">
-    <div class="menu__panel">
-      <div class="menu__head">
-        <div class="menu__brand">
-          <span class="menu__dot" aria-hidden="true"></span>
-          <span class="menu__name">STUDIO</span>
-        </div>
-        <button class="menu__close" type="button" aria-label="Fermer">✕</button>
-      </div>
+  <main>
+    <!-- HERO -->
+    <section id="apropos">
+      <h1>Aurélien HEBERT</h1>
+      <p>
+        J’accompagne les entreprises dans <strong>l’analyse de leurs données</strong>,
+        <strong>l’optimisation de leurs reportings</strong> et la <strong>création d’emails B2B en HTML</strong>.
+        À l’aise au téléphone, j’interviens aussi en <strong>téléprospection</strong> pour générer des opportunités commerciales.
+      </p>
 
-      <nav class="menu__nav" aria-label="Navigation">
-        <a class="menu__link" href="#top"><span class="menu__n">01/</span> Home</a>
-        <a class="menu__link" href="#work"><span class="menu__n">02/</span> Work</a>
-        <a class="menu__link" href="#process"><span class="menu__n">03/</span> Process</a>
-        <a class="menu__link" href="#contact"><span class="menu__n">04/</span> Contact</a>
-      </nav>
+      <!-- Photo (placeholder) -->
+      <figure>
+        <!-- Tu remplaceras l'image plus tard (ex: assets/aurelien.jpg) -->
+        <img src="assets/photo-aurelien.jpg" alt="Photo d’Aurélien HEBERT" width="220" height="220" />
+        <figcaption>Photo à intégrer (placeholder)</figcaption>
+      </figure>
 
-      <div class="menu__foot">
-        <p class="menu__label">Get in touch</p>
-        <a class="menu__meta" href="mailto:hello@example.com">hello@example.com</a>
-        <a class="menu__meta" href="tel:+33123456789">+33 1 23 45 67 89</a>
-        <p class="menu__small">Paris • Remote</p>
-      </div>
-    </div>
-
-    <div class="menu__backdrop" data-close="1" aria-hidden="true"></div>
-  </aside>
-
-  <main id="top">
-    <!-- HERO WOW -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__left">
-          <p class="kicker wow wow-1">
-            A cinematic landing page with <span class="grad">teal/purple energy</span>
-          </p>
-
-          <!-- WOW TITLE (split in chars by JS) -->
-          <h1 class="title js-split wow-title" data-split="chars" aria-label="WOW STUDIO">
-            WOW <span class="title__accent">STUDIO</span>
-          </h1>
-
-          <div class="underline wow wow-2" aria-hidden="true"></div>
-
-          <p class="lead wow wow-3">
-            Une page qui claque dès l’ouverture : texte <strong>lettre par lettre</strong>, shapes qui flottent,
-            lignes qui se dessinent, et un rythme d’animation “premium”.
-          </p>
-
-          <div class="actions wow wow-4">
-            <a class="btn btn--primary" href="#work">RECENT WORK</a>
-            <a class="btn btn--ghost" href="#process">PROCESS</a>
-          </div>
-
-          <div class="facts wow wow-5">
-            <div class="fact">
-              <span class="fact__k">STYLE</span>
-              <span class="fact__v">CINEMATIC • MINIMAL</span>
-            </div>
-            <div class="fact">
-              <span class="fact__k">VIBE</span>
-              <span class="fact__v">TEAL • PURPLE • GLOW</span>
-            </div>
-          </div>
-
-          <div class="micro wow wow-6">
-            <div class="micro__chip">⚡ Load animations</div>
-            <div class="micro__chip">✦ Parallax shapes</div>
-            <div class="micro__chip">⬡ Smooth hover</div>
-          </div>
-        </div>
-
-        <div class="hero__right">
-          <!-- Main media -->
-          <figure class="media wow wow-3">
-            <!-- Remplace par ta vraie image -->
-            <img src="assets/hero.jpg" alt="Hero image (placeholder)" loading="lazy" />
-            <figcaption class="media__cap">
-              <span class="media__dot" aria-hidden="true"></span>
-              crafted motion • clean design • strong identity
-            </figcaption>
-          </figure>
-
-          <!-- Floating shapes -->
-          <div class="shape shape--ring" aria-hidden="true"></div>
-          <div class="shape shape--dots" aria-hidden="true"></div>
-          <div class="shape shape--plus" aria-hidden="true"></div>
-          <div class="shape shape--beam" aria-hidden="true"></div>
-
-          <!-- Inspired card -->
-          <div class="inspired wow wow-6">
-            <p class="inspired__k">I get inspired by</p>
-            <p class="inspired__v">contrast, rhythm, typography, and bold micro-interactions.</p>
-          </div>
-        </div>
-      </div>
+      <p>
+        <a href="#contact">→ Discutons de ta mission</a>
+      </p>
     </section>
 
-    <!-- WORK -->
-    <section id="work" class="section">
-      <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow reveal">Recent work</p>
-          <h2 class="h2 reveal" style="transition-delay:.06s;">Visuels qui respirent, interactions qui surprennent.</h2>
-        </div>
+    <hr />
 
-        <div class="cards">
-          <a class="card reveal" href="#">
-            <div class="card__media">
-              <img src="assets/work-1.jpg" alt="Work 1 placeholder" loading="lazy">
-            </div>
-            <div class="card__body">
-              <p class="card__title">Dashboard concept</p>
-              <p class="card__meta">UI • Data • Motion</p>
-            </div>
-          </a>
+    <!-- EXPERTISES / PROJETS -->
+    <section id="expertises">
+      <h2>Expertises</h2>
 
-          <a class="card reveal" href="#" style="transition-delay:.06s;">
-            <div class="card__media">
-              <img src="assets/work-2.jpg" alt="Work 2 placeholder" loading="lazy">
-            </div>
-            <div class="card__body">
-              <p class="card__title">Email template</p>
-              <p class="card__meta">HTML • Layout • Performance</p>
-            </div>
-          </a>
+      <article>
+        <h3>Emails professionnels (HTML) — performance & compatibilité</h3>
+        <ul>
+          <li>Conception / intégration d’emails B2B (HTML)</li>
+          <li>Optimisation (lisibilité, structure, cohérence du message)</li>
+          <li>Suivi KPI & amélioration continue des contenus</li>
+        </ul>
+      </article>
 
-          <a class="card reveal" href="#" style="transition-delay:.12s;">
-            <div class="card__media">
-              <img src="assets/work-3.jpg" alt="Work 3 placeholder" loading="lazy">
-            </div>
-            <div class="card__body">
-              <p class="card__title">Landing motion</p>
-              <p class="card__meta">Copy • Anim • UX</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <article>
+        <h3>Reporting & automatisation — pilotage par les KPI</h3>
+        <ul>
+          <li>Conception et industrialisation de reportings</li>
+          <li>Dashboards pour le pilotage opérationnel</li>
+          <li>Analyse performance commerciale / suivi incentives</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Téléprospection — qualification & prise de rendez-vous</h3>
+        <ul>
+          <li>Qualification, argumentation, prise de RDV</li>
+          <li>Aisance téléphonique, communication claire</li>
+          <li>Orientation résultat / performance</li>
+        </ul>
+      </article>
     </section>
 
-    <!-- PROCESS -->
-    <section id="process" class="section section--alt">
-      <div class="container">
-        <div class="sectionHead sectionHead--row">
-          <div>
-            <p class="eyebrow reveal">This is the process</p>
-            <h2 class="h2 reveal" style="transition-delay:.06s;">Simple, net, efficace.</h2>
-          </div>
-          <a class="btn btn--ghost reveal" href="#contact" style="transition-delay:.12s;">LET’S TALK</a>
-        </div>
+    <hr />
 
-        <div class="steps">
-          <article class="step reveal">
-            <div class="step__n">01</div>
-            <h3 class="step__t">Direction</h3>
-            <p class="step__p">On fixe le message, le rythme, et la hiérarchie visuelle.</p>
-          </article>
+    <!-- EXPERIENCES -->
+    <section id="experiences">
+      <h2>Expériences (résumé)</h2>
 
-          <article class="step reveal" style="transition-delay:.06s;">
-            <div class="step__n">02</div>
-            <h3 class="step__t">Design</h3>
-            <p class="step__p">On construit l’interface et les détails “premium”.</p>
-          </article>
-
-          <article class="step reveal" style="transition-delay:.12s;">
-            <div class="step__n">03</div>
-            <h3 class="step__t">Motion</h3>
-            <p class="step__p">Animations au load + micro-interactions au scroll.</p>
-          </article>
-        </div>
-      </div>
+      <ul>
+        <li>
+          <strong>Rédaction & intégration d’emails B2B (HTML)</strong> — <em>depuis 2021</em><br />
+          Conception et optimisation d’emails orientés performance, suivi KPI et amélioration continue.
+        </li>
+        <li>
+          <strong>Reporting & Automatisation (Data Factory)</strong> — <em>2019 – 2021</em><br />
+          Automatisation et industrialisation de reportings, création de dashboards, support au pilotage opérationnel.
+        </li>
+        <li>
+          <strong>Administration recouvrement entreprises</strong> — <em>2018 – 2020</em><br />
+          Gestion des flux, affectation aux agences, droits utilisateurs, reporting périodique.
+        </li>
+        <li>
+          <strong>Planification & analyse de performance</strong> — <em>2017 – 2019</em><br />
+          Planification multi-activités (~800 ETP), analyse production, KPI, reporting stratégique.
+        </li>
+        <li>
+          <strong>Conseiller client</strong> — <em>2017</em><br />
+          Relation client et vente par téléphone, optimisation des règlements (digitalisation).
+        </li>
+      </ul>
     </section>
+
+    <hr />
+
+    <!-- COMPETENCES -->
+    <section id="competences">
+      <h2>Compétences</h2>
+
+      <h3>Compétences clés</h3>
+      <ul>
+        <li>Analyse de données & pilotage de performance (KPI)</li>
+        <li>Reporting & automatisation de tableaux de bord</li>
+        <li>Intégration HTML d’emails professionnels (B2B)</li>
+        <li>Téléprospection : vente, qualification, prise de rendez-vous</li>
+        <li>Rédaction professionnelle (emails, communications métiers)</li>
+        <li>Suite Microsoft Office (Excel, Word, PowerPoint)</li>
+      </ul>
+
+      <h3>Méthode de travail</h3>
+      <ul>
+        <li>Autonomie, organisation, respect des délais</li>
+        <li>Collaboration avec équipes projet & clients</li>
+        <li>Amélioration continue des processus et contenus</li>
+      </ul>
+
+      <h3>Langues</h3>
+      <ul>
+        <li>Anglais : technique (écrit/lu/parlé simple)</li>
+      </ul>
+    </section>
+
+    <hr />
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="cta reveal">
-          <div class="cta__left">
-            <p class="eyebrow">Contact</p>
-            <h2 class="h2">Ready to launch something unforgettable?</h2>
-            <p class="p">Tu peux remplacer ce bloc par ton contenu. Le design est prêt.</p>
-            <div class="cta__actions">
-              <a class="btn btn--primary" href="mailto:hello@example.com">GET IN TOUCH</a>
-              <a class="btn btn--ghost" href="#top">BACK TO TOP</a>
-            </div>
-          </div>
-          <div class="cta__right">
-            <div class="cta__panel">
-              <p class="cta__k">Email</p>
-              <p class="cta__v">hello@example.com</p>
-              <div class="cta__line"></div>
-              <p class="cta__k">Phone</p>
-              <p class="cta__v">+33 1 23 45 67 89</p>
-            </div>
-          </div>
-        </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email : <a href="mailto:m.hebert.aurelien.pro@gmail.com">m.hebert.aurelien.pro@gmail.com</a>
+      </p>
 
-        <footer class="footer">
-          <p class="footer__l">© <span id="y"></span> WOW STUDIO</p>
-          <div class="footer__r">
-            <a class="textLink" href="#">LinkedIn</a>
-            <span class="sep">/</span>
-            <a class="textLink" href="#">GitHub</a>
-            <span class="sep">/</span>
-            <a class="textLink" href="#">Instagram</a>
-          </div>
-        </footer>
-      </div>
+      <p>
+        <a href="mailto:m.hebert.aurelien.pro@gmail.com?subject=Contact%20-%20Mission%20Freelance&body=Bonjour%20Aur%C3%A9lien%2C%0A%0AJe%20souhaite%20%C3%A9changer%20au%20sujet%20de%20...%0A%0AMerci%2C">
+          Envoyer un email pré-rempli
+        </a>
+      </p>
     </section>
   </main>
 
-  <script>
-    // year
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Menu overlay
-    const menu = document.getElementById('menu');
-    const openBtn = document.querySelector('.menuBtn');
-    const closeBtn = document.querySelector('.menu__close');
-    const backdrop = document.querySelector('.menu__backdrop');
-    const links = document.querySelectorAll('.menu__link');
-
-    function openMenu(){
-      menu.classList.add('is-open');
-      menu.setAttribute('aria-hidden','false');
-      openBtn.setAttribute('aria-expanded','true');
-      document.documentElement.classList.add('no-scroll');
-    }
-    function closeMenu(){
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden','true');
-      openBtn.setAttribute('aria-expanded','false');
-      document.documentElement.classList.remove('no-scroll');
-    }
-    openBtn.addEventListener('click', () => menu.classList.contains('is-open') ? closeMenu() : openMenu());
-    closeBtn.addEventListener('click', closeMenu);
-    backdrop.addEventListener('click', closeMenu);
-    links.forEach(a => a.addEventListener('click', closeMenu));
-    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
-
-    // Load-trigger: start intro
-    window.addEventListener("load", () => {
-      document.body.classList.add("is-ready");
-    });
-
-    // Mouse parallax for shapes
-    const root = document.documentElement;
-    window.addEventListener("mousemove", (e) => {
-      const x = (e.clientX / window.innerWidth) - 0.5;
-      const y = (e.clientY / window.innerHeight) - 0.5;
-      root.style.setProperty("--mx", x.toFixed(3));
-      root.style.setProperty("--my", y.toFixed(3));
-    });
-
-    // Split text into chars (WOW title)
-    function splitToChars(el){
-      const original = el.innerHTML;
-      // Keep accent span if present: split plain text nodes only
-      const temp = document.createElement("span");
-      temp.innerHTML = original;
-
-      const out = document.createElement("span");
-      out.className = "split";
-      let charIndex = 0;
-
-      function addTextNode(text, parent){
-        const parts = text.split(/(\s+)/);
-        parts.forEach(part => {
-          if(part.trim() === ""){
-            parent.appendChild(document.createTextNode(part));
-            return;
-          }
-          const word = document.createElement("span");
-          word.className = "split-word";
-          parent.appendChild(word);
-
-          [...part].forEach(ch => {
-            const span = document.createElement("span");
-            span.className = "split-char";
-            span.textContent = ch;
-
-            const baseDelay = 0.12;   // sec
-            const step = 0.030;       // sec per char
-            span.style.animationDelay = (baseDelay + charIndex * step).toFixed(3) + "s";
-            word.appendChild(span);
-            charIndex++;
-          });
-        });
-      }
-
-      // Walk nodes to preserve <span class="title__accent">
-      [...temp.childNodes].forEach(node => {
-        if(node.nodeType === Node.TEXT_NODE){
-          addTextNode(node.textContent, out);
-        } else if(node.nodeType === Node.ELEMENT_NODE){
-          const clone = node.cloneNode(false);
-          out.appendChild(clone);
-          addTextNode(node.textContent, clone);
-        }
-      });
-
-      el.innerHTML = "";
-      el.appendChild(out);
-    }
-
-    document.querySelectorAll(".js-split[data-split='chars']").forEach(splitToChars);
-
-    // Reveal on scroll (bonus)
-    const revealEls = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(ent => {
-        if(ent.isIntersecting){
-          ent.target.classList.add("in");
-          io.unobserve(ent.target);
-        }
-      });
-    }, { threshold: 0.14 });
-    revealEls.forEach(el => io.observe(el));
-  </script>
+  <footer>
+    <hr />
+    <p>© <span>2026</span> — Aurélien HEBERT</p>
+  </footer>
 </body>
 </html>
